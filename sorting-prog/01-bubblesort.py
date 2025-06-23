@@ -12,8 +12,6 @@ def bubble_sort(arr):
             break
     return arr
 
-
-
 arr = [13,10,25,6,8,9,28]
 k = bubble_sort(arr)
 print(k)
