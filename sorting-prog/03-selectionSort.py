@@ -13,6 +13,8 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
 
+    
+
 arr = [11,24,13,6,16,18,25,9]
 s_sort = selection_sort(arr)
 print("Sorted array:", s_sort)
