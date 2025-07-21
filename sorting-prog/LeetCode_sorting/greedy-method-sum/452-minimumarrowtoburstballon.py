@@ -65,3 +65,6 @@ print("first Input: ", intput1)
 
 intput2 = sol.findMinArrowShots(points2)
 print("Second Input: ", intput2)
+
+# Time Complexity: O(n log n) – due to sorting.
+# Space Complexity: O(1) – excluding sorting space.
