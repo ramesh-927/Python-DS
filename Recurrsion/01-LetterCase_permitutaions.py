@@ -21,6 +21,8 @@ class Solutions:
 
         backtrack(0, [])
         return result
+    
+   ## 1 hour 10 mins
 
 sol = Solutions()
 res = sol.letter_case_permutation("a1b2")    
