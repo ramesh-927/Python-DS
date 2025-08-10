@@ -1,0 +1,16 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore environment files
+.env
+.terraform
+.terraform.lock.hcl
+.vscode
+
+# Ignore build output
+dist/
+build/
