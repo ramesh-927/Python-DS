@@ -1,0 +1,18 @@
+{
+  "family": "hello-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::941377112992:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "hello",
+      "image": "IMAGE_URI",
+      "portMappings": [
+        { "containerPort": 3000, "protocol": "tcp" }
+      ],
+      "essential": true
+    }
+  ]
+}
