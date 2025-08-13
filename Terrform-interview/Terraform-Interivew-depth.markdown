@@ -1,4 +1,5 @@
 1. Q1. How frequently do you provision or update infrastructure using Terraform in your projects, and where do you store your Terraform configurations and state files?
+
 Ans : In our projects, we typically provision infrastructure using Terraform when a new environment is created or when infrastructure changes are required, which can be anywhere from once a week to several times a sprint, depending on the release cycle.
 All Terraform code is stored in a version-controlled Git repository, organized into environment-specific folders and reusable modules.
 For state management, we use a remote backend — for example, AWS S3 with DynamoDB locking — so the state is consistent and accessible to the whole team, and we integrate Terraform plans/applies into our Jenkins pipelines with pull request approvals before deployment
