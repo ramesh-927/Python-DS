@@ -17,4 +17,31 @@ digits[i] is a digit in the range ['2', '9'].
 
 """
 class Solutions:
-    def 
+    def letterCombination(self, digits):
+
+        # 1) Edge case: if input is empty, there are no combinations
+        if not digits:
+            return []
+        
+        phone = {
+            '2': "abc", '3': "def", '4': "ghi", '5': "jkl",
+            '6': "mno", '7': "pqrs", '8': "tuv", '9': "wxyz"
+        }
+        res = []
+        path = []
+
+        def backtrack(i):
+            if i ==len(digits):
+                res.append("".join(path))
+                return
+            
+            for ch in phone[digits[i]]:
+                path.append(ch)
+                backtrack(i + 1)
+                path.pop()
+        backtrack(0)
+        return res
+        
+sol = Solutions()
+result =sol.letterCombination("234")
+print(result)
