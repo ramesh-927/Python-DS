@@ -1,0 +1,38 @@
+183.165.159.254 - - [01/Jan/2025:06:12:33 +0000] "DELETE /about HTTP/1.1" 200 3092 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.316
+101.197.84.215 - - [02/Jan/2025:06:47:48 +0000] "POST /index.html HTTP/1.1" 200 2051 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.452
+93.85.69.181 - - [03/Jan/2025:07:05:29 +0000] "GET /index.html HTTP/1.1" 200 5202 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.142
+45.32.112.76 - - [04/Jan/2025:07:15:12 +0000] "GET /contact HTTP/1.1" 404 1283 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.287
+172.16.254.1 - - [05/Jan/2025:07:30:45 +0000] "PUT /api/v1/resource HTTP/1.1" 201 4096 "https://example.com" "curl/7.68.0" 0.673
+198.51.100.23 - - [06/Jan/2025:08:01:19 +0000] "GET /images/logo.png HTTP/1.1" 200 7892 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 0.134
+203.0.113.45 - - [07/Jan/2025:08:22:56 +0000] "POST /login HTTP/1.1" 403 512 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.398
+192.168.1.100 - - [08/Jan/2025:08:45:23 +0000] "GET / HTTP/1.1" 200 1024 "https://google.com" "Mozilla/5.0 (Linux; Android 10)" 0.251
+10.0.0.5 - - [09/Jan/2025:09:10:37 +0000] "DELETE /user/123 HTTP/1.1" 500 3456 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 1.892
+142.250.190.174 - - [10/Jan/2025:09:30:14 +0000] "GET /products HTTP/1.1" 200 6144 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.176
+67.228.45.12 - - [11/Jan/2025:10:00:55 +0000] "POST /api/v2/data HTTP/1.1" 201 2048 "https://example.com" "curl/7.68.0" 0.512
+89.45.67.89 - - [12/Jan/2025:10:15:22 +0000] "GET /cart HTTP/1.1" 200 4096 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.293
+123.45.67.123 - - [13/Jan/2025:10:30:45 +0000] "PUT /profile HTTP/1.1" 200 3072 "https://example.com" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 0.341
+45.67.89.45 - - [14/Jan/2025:11:00:12 +0000] "GET /search?q=test HTTP/1.1" 200 8192 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.198
+78.90.12.34 - - [15/Jan/2025:11:15:33 +0000] "POST /signup HTTP/1.1" 201 1024 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.456
+56.78.90.123 - - [15/Feb/2025:22:30:45 +0000] "GET /products/item/456 HTTP/1.1" 200 4096 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.267
+89.45.67.89 - - [15/Feb/2025:23:50:22 +0000] "POST /checkout HTTP/1.1" 503 512 "https://google.com" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 3.124
+123.243.30.42 - - [12/Aug/2025:22:26:07 +0000] "PUT /contact HTTP/1.1" 200 1091 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.315
+164.202.133.223 - - [12/Aug/2025:01:39:12 +0000] "PUT / HTTP/1.1" 404 8263 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.573
+126.195.3.248 - - [12/Aug/2025:19:48:38 +0000] "GET /images/pic.jpg HTTP/1.1" 200 1288 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.379
+209.85.220.41 - - [12/Aug/2025:20:15:55 +0000] "GET /about HTTP/1.1" 200 4096 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.234
+183.165.159.254 - - [01/Jan/2025:06:12:33 +0000] "DELETE /about HTTP/1.1" 200 3092 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.316
+101.197.84.215 - - [02/Jan/2025:06:47:48 +0000] "POST /index.html HTTP/1.1" 200 2051 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.452
+93.85.69.181 - - [03/Jan/2025:07:05:29 +0000] "GET /index.html HTTP/1.1" 200 5202 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.142
+45.32.112.76 - - [04/Jan/2025:07:15:12 +0000] "GET /contact HTTP/1.1" 404 1283 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.287
+172.16.254.1 - - [05/Jan/2025:07:30:45 +0000] "PUT /api/v1/resource HTTP/1.1" 201 4096 "https://example.com" "curl/7.68.0" 0.673
+198.51.100.23 - - [06/Jan/2025:08:01:19 +0000] "GET /images/logo.png HTTP/1.1" 200 7892 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 0.134
+203.0.113.45 - - [07/Jan/2025:08:22:56 +0000] "POST /login HTTP/1.1" 403 512 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.398
+192.168.1.100 - - [08/Jan/2025:08:45:23 +0000] "GET / HTTP/1.1" 200 1024 "https://google.com" "Mozilla/5.0 (Linux; Android 10)" 0.251
+10.0.0.5 - - [09/Jan/2025:09:10:37 +0000] "DELETE /user/123 HTTP/1.1" 500 3456 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 1.892
+142.250.190.174 - - [10/Jan/2025:09:30:14 +0000] "GET /products HTTP/1.1" 200 6144 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.176
+67.228.45.12 - - [11/Jan/2025:10:00:55 +0000] "POST /api/v2/data HTTP/1.1" 201 2048 "https://example.com" "curl/7.68.0" 0.512
+89.45.67.89 - - [12/Jan/2025:10:15:22 +0000] "GET /cart HTTP/1.1" 200 4096 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.293
+123.45.67.123 - - [13/Jan/2025:10:30:45 +0000] "PUT /profile HTTP/1.1" 200 3072 "https://example.com" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 0.341
+45.67.89.45 - - [14/Jan/2025:11:00:12 +0000] "GET /search?q=test HTTP/1.1" 200 8192 "https://bing.com" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" 0.198
+78.90.12.34 - - [15/Jan/2025:11:15:33 +0000] "POST /signup HTTP/1.1" 201 1024 "https://example.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.456
+56.78.90.123 - - [15/Feb/2025:22:30:45 +0000] "GET /products/item/456 HTTP/1.1" 200 4096 "https://google.com" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" 0.267
+89.45.67.89 - - [15/Feb/2025:23:50:22 +0000] "POST /checkout HTTP/1.1" 503 512 "https://google.com" "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)" 3.124

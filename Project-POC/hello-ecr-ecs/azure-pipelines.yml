@@ -1,0 +1,40 @@
+trigger:
+  - main
+
+variables:
+  AWS_REGION: 'us-east-1'
+  ECR_REPO: 'hello-ts'
+  ECS_CLUSTER: 'hello-cluster'
+  ECS_SERVICE: 'hello-service'
+  TASK_FAMILY: 'hello-task'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Use Node 18'
+
+- script: |
+    npm ci
+    npm run build
+  displayName: 'Install & build'
+
+- script: |
+    IMAGE_TAG=$(Build.BuildId)
+    docker build -t ${ECR_REPO}:$IMAGE_TAG .
+    ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+    REPO_URI=${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}
+    docker tag ${ECR_REPO}:$IMAGE_TAG ${REPO_URI}:$IMAGE_TAG
+    aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${REPO_URI}
+    docker push ${REPO_URI}:$IMAGE_TAG
+    # prepare taskdef.json from template
+    sed "s|IMAGE_URI|${REPO_URI}:${IMAGE_TAG}|g" taskdef.json.template > taskdef.json
+    aws ecs register-task-definition --cli-input-json file://taskdef.json
+    aws ecs update-service --cluster ${ECS_CLUSTER} --service ${ECS_SERVICE} --force-new-deployment
+  env:
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+  displayName: 'Build, push to ECR and deploy to ECS'
