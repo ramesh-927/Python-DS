@@ -14,8 +14,7 @@ EKS :   Use Aws cli  command :  aws eks update-kubeconfig --region <region> --na
 2Q: Can you tell me about the most recent versions of Azure Kubernetes Service (AKS) and Amazon Elastic Kubernetes Service (EKS) you’ve worked with? Additionally, could you explain how you utilize these versions during the provisioning process?
 
 A:
-I've worked with AKS up to kubernetes 1.29 and EKS up to 1.30, the latest stable version in 2025.
-For AKS, i use the Azure cli with az aks create, specifying --kubernetes-version 1.29, node count and VM size like Standard_D2s_v3. I enable the features like node Auto Provsioning wiht Karpenter for scaling, Azure container Service for volumes, and Azure monitor for observarbility. I ensure complaince with FIPS for sensetive workloads and plan upgrades using the AKS reader tracker.
+I've worked with AKS up to kubernetes 1.29 and EKS up to 1.30, the latest stable version in 2025. For AKS, i use the Azure cli with az aks create, specifying --kubernetes-version 1.29, node count and VM size like Standard_D2s_v3. I enable the features like node Auto Provsioning wiht Karpenter for scaling, Azure container Service for volumes, and Azure monitor for observarbility. I ensure complaince with FIPS for sensetive workloads and plan upgrades using the AKS reader tracker.
 For EKS, i provsion with eksctl or terraform,using --version 1.30. i leverage AWS Fargate for serverless workloads,configure CSI driver for EBS or EFS storages, and cluster autoscaler for autoscaling. i integrate for RBAC and cloudwathc for monitoring.
 I choose AKS for Azure eco systems and quick setups and EKS for aws integration or serverless neeeds,ensurign autoscaling and complaince in both.
 -------------------------------------------------------------------------------------------------------------------------------
@@ -118,6 +117,17 @@ Kubernetes provides several networking services:
 7. Headless: Enables direct pod access for stateful apps (e.g., databases).
 8. Ingress – manages HTTP/HTTPS routing to services with advanced rules like TLS termination.
 9. Network Policies – define firewall-like rules to control pod-to-pod or pod-to-service traffi
+
+9Q: Imagine you have multiple tenant servers and need to schedule two pods on them. How would you implement this, and what’s your approach?
+
+A:
+In a multi-tenant Kubernetes environment, scheduling pods requires careful isolation and fairness.I would start by using Namespaces to logically isolate tenants and apply ResourceQuotas and LimitRanges to ensure fair CPU/memory allocation.
+For scheduling the two pods on specific tenant servers, I would use:
+1. Node selectors / node affinity to place pods on designated tenant nodes:Use node affinity rules to target specific servers. For example, label servers with tenant=tenant1 and tenant=tenant2, then apply pod specs
+2. Taints and Tolerations: If servers are dedicated to tenants, apply taints (e.g., kubectl taint nodes server1 tenant=tenant1:NoSchedule) and add tolerations to pod specs to allow scheduling only on matching servers.to ensure only the intended pods run on those tenant servers.
+3. Resource Requests/Limits: Define CPU/memory requests and limits to ensure balanced resource allocation, preventing one pod from overloading a server
+4. Scheduler Configuration: Use the default Kubernetes scheduler or a custom scheduler for advanced multi-tenancy, ensuring pods are placed based on tenant-specific policies.
+5. Monitoring: Use kubectl describe node or Prometheus to verify pod placement and resource usage post-scheduling
 
 
 
