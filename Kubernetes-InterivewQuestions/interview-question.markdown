@@ -8,7 +8,7 @@ Answer :- Connecting EKS(Elestic Kubertnes services) or AKS(Azure Kubernetes Ser
     2. Verify the connection: After configurating the credientials, verify the cluster using "kubectl".
         run kubectl get nodes.
 Impoart Considerations:
-    1. Network Connectivity: Ensure the local mechine ahs network access to the EKS or AKS cluster end points. if the clsuter is in private network, you might need to use NAT( bastion hosts) or set up VPN host.
+    1. Network Connectivity: Ensure the local mechine has network access to the EKS or AKS cluster end points. if the clsuter is in private network, you might need to use NAT( bastion hosts) or set up VPN host.
     2. Authentcation and Authorization: The credentials retrived in step2 grant you access based on the permissions assocaited with AWS IAM role or AZURE AD identity. ensure this identity has necassry permissions.
     3. Kubeconfig file:  the kubeconfig file (typically located at ~/ .kube/config) stores configurations for connecting to your kubernetes cluster.
 -------------------------------------------------------------------------------------------------------------------------------
@@ -25,3 +25,4 @@ I choose AKS for Azure eco systems and quick setups and EKS for aws integration 
 3Q. Could you describe your experience with Continuous Deployment (CD) and the process you follow to deploy applications in a production environment?
 
 Answer:- I have extensive experience implmenting Continous Deployment Pipeline across AWS,Azure and kubernetes environments.My Typical process the code being pushed to a version control system like github and gitlab. A CI/CD tool such as jenkins, github actions, or harness automated unit, integration and security tests. if tests pass, the pipeline container images, store them in a registry and uses IaC tools helm or terraform for deployment.for production, i follow progressive delivery approach-blue/green or canary deployments- so we can validate a new vesrion with minmal user impact.i also intgrate obserbility like Prometheus, Datadog, and Splunk to monitor performance and roll back automatically if issues are detected. Security and approvals are built into the pipeline, ensuring compliance while still enabling fast, reliable releases.
+-------------------------------------------------------------------------------------------------------------------------------
