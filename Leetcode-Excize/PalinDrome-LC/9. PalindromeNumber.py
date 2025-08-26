@@ -31,3 +31,6 @@ class Solution:
 res = Solution()
 result = res.is_palindrome(-123)
 print(result)
+
+# Time Complexity: O(log x), where x is the input number. The number of digits in x is proportional to log x, and we process each digit once.
+# Space Complexity: O(1), as we only use a constant amount of extra space (variables for reversed_num and digit).
