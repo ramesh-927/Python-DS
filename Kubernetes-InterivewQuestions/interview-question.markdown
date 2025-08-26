@@ -17,7 +17,7 @@ A:
 I have worked with AKS up to kubernetes 1.29 and EKS up to 1.30, the latest stable version in 2025. For AKS, i use the Azure cli with az aks create, specifying --kubernetes-version 1.29, node count and VM size like Standard_D2s_v3. I enable the features like node Auto Provsioning wiht Karpenter for scaling, Azure container Service for volumes, and Azure monitor for observarbility. I ensure complaince with FIPS for sensetive workloads and plan upgrades using the AKS reader tracker.
 For EKS, i provsion with eksctl or terraform,using --version 1.30. i leverage AWS Fargate for serverless workloads,configure CSI driver for EBS or EFS storages, and cluster autoscaler for autoscaling. i integrate for RBAC and cloudwathc for monitoring.
 I choose AKS for Azure eco systems and quick setups and EKS for aws integration or serverless neeeds,ensurign autoscaling and complaince in both.
--------------------------------------------------------------------------------------------------------------------------------
+
 3Q: Could you describe your experience with Continuous Deployment (CD) and the process you follow to deploy applications in a production environment?
 
 A:
