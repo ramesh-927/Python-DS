@@ -10,11 +10,11 @@ EKS :   Use Aws cli  command :  aws eks update-kubeconfig --region <region> --na
     1. Network Connectivity: Ensure the local mechine has network access to the EKS or AKS cluster end points. if the clsuter is in private network, you might need to use NAT( bastion hosts) or set up VPN host.
     2. Authentcation and Authorization: The credentials retrived in step2 grant you access based on the permissions assocaited with AWS IAM role or AZURE AD identity. ensure this identity has necassry permissions.
     3. Kubeconfig file:  the kubeconfig file (typically located at ~/ .kube/config) stores configurations for connecting to your kubernetes cluster.
--------------------------------------------------------------------------------------------------------------------------------
+
 2Q: Can you tell me about the most recent versions of Azure Kubernetes Service (AKS) and Amazon Elastic Kubernetes Service (EKS) you’ve worked with? Additionally, could you explain how you utilize these versions during the provisioning process?
 
 A:
- I've worked with AKS up to kubernetes 1.29 and EKS up to 1.30, the latest stable version in 2025.
+I've worked with AKS up to kubernetes 1.29 and EKS up to 1.30, the latest stable version in 2025.
 For AKS, i use the Azure cli with az aks create, specifying --kubernetes-version 1.29, node count and VM size like Standard_D2s_v3. I enable the features like node Auto Provsioning wiht Karpenter for scaling, Azure container Service for volumes, and Azure monitor for observarbility. I ensure complaince with FIPS for sensetive workloads and plan upgrades using the AKS reader tracker.
 For EKS, i provsion with eksctl or terraform,using --version 1.30. i leverage AWS Fargate for serverless workloads,configure CSI driver for EBS or EFS storages, and cluster autoscaler for autoscaling. i integrate for RBAC and cloudwathc for monitoring.
 I choose AKS for Azure eco systems and quick setups and EKS for aws integration or serverless neeeds,ensurign autoscaling and complaince in both.
@@ -22,13 +22,13 @@ I choose AKS for Azure eco systems and quick setups and EKS for aws integration 
 3Q: Could you describe your experience with Continuous Deployment (CD) and the process you follow to deploy applications in a production environment?
 
 A:
- I have extensive experience implmenting Continous Deployment Pipeline across AWS,Azure and kubernetes environments.My Typical process the code being pushed to a version control system like github and gitlab. A CI/CD tool such as jenkins, github actions, or harness automated unit, integration and security tests. if tests pass, the pipeline container images, store them in a registry and uses IaC tools helm or terraform for deployment.for production, i follow progressive delivery approach-blue/green or canary deployments- so we can validate a new vesrion with minmal user impact.i also intgrate obserbility like Prometheus, Datadog, and Splunk to monitor performance and roll back automatically if issues are detected. Security and approvals are built into the pipeline, ensuring compliance while still enabling fast, reliable releases.
--------------------------------------------------------------------------------------------------------------------------------
+I have extensive experience implmenting Continous Deployment Pipeline across AWS,Azure and kubernetes environments.My Typical process the code being pushed to a version control system like github and gitlab. A CI/CD tool such as jenkins, github actions, or harness automated unit, integration and security tests. if tests pass, the pipeline container images, store them in a registry and uses IaC tools helm or terraform for deployment.for production, i follow progressive delivery approach-blue/green or canary deployments- so we can validate a new vesrion with minmal user impact.i also intgrate obserbility like Prometheus, Datadog, and Splunk to monitor performance and roll back automatically if issues are detected. Security and approvals are built into the pipeline, ensuring compliance while still enabling fast, reliable releases.
+
 4Q: Can you explain the key components of Kubernetes and how the Container Network Interface (CNI) and Services work?
 
 A:
 Kubernetes consists of control plane components—API server, etcd, scheduler, and controller manager —and worker node components like kubelet, kube-proxy, and container runtime.The CNI plugin (like Calico, Flannel, or Cilium) handles pod networking by assigning each pod a unique IP and ensuring routing between pods across nodes, typically using overlay or BGP routing.This enables Kubernetes’ flat network model, where every pod can talk to every other pod without NAT. kube-proxy works with CNI to manage service IPs and routing rules.Kubernetes Services then abstract a set of pods, providing stable virtual IPs and DNS names.Depending on the type—ClusterIP, NodePort, LoadBalancer, or ExternalName—services ensure reliable pod discovery, load balancing, and external exposure, even when pods are dynamically created, scaled, or destroyed.
--------------------------------------------------------------------------------------------------------------------------------
+
 5Q: Can you walk me through the step-by-step process you follow to upgrade a Kubernetes cluster?
 
 A:
@@ -77,7 +77,7 @@ kubectl get nodes
 kubectl get pods --all-namespaces
 # Check cluster health
 kubectl get cs  # componentstatuses
--------------------------------------------------------------------------------------------------------------------------------
+
 6Q: Could you explain what multi-container pods are, their types, and how you would address a situation where one pod in a multi-container setup is consuming excessive CPU?
 
 A:
@@ -93,7 +93,7 @@ If one container in a multi-container pod consumes excessive CPU, I would addres
 4. Optimizing the container process (code tuning, throttling, or offloading workloads).
 5. If it’s an architectural issue, I’d consider splitting the workload into separate pods for better isolation and scaling.
 This ensures the pod remains stable, and no single container impacts the performance of the others.
--------------------------------------------------------------------------------------------------------------------------------
+
 7Q: How do you ensure the security of a Kubernetes cluster?
 
 A:
@@ -104,6 +104,21 @@ Securing Kubernetes: To secure a Kubernetes cluster, I implement these key measu
 4. Pod Security: Use Pod Security Standards (PSS) to enforce runtime constraints and limit container privileges.
 5. Image Security: Scan images with tools like AquaSec,Trivy and use trusted registries (e.g., ACR, ECR).
 6. API Server Security: Enable TLS, disable anonymous access, and use audit logging.
+
+8Q: What are the networking services provided by Kubernetes?
+
+A:
+Kubernetes provides several networking services:
+1. Pod-to-Pod Communication – enabled by the CNI plugin, giving each pod a unique IP in a flat network.
+2. ClusterIP: Default service for internal pod communication via a virtual IP.
+3. NodePort: Exposes a service on a specific port of each node for external access.
+4. LoadBalancer: Provisions a cloud provider’s load balancer for external traffic (e.g., AWS ELB).
+5. Ingress: Manages HTTP/HTTPS traffic with routing rules, using controllers like NGINX or Traefik.
+6. ExternalName: Maps a service to an external DNS name without proxying.
+7. Headless: Enables direct pod access for stateful apps (e.g., databases).
+8. Ingress – manages HTTP/HTTPS routing to services with advanced rules like TLS termination.
+9. Network Policies – define firewall-like rules to control pod-to-pod or pod-to-service traffi
+
 
 
 
