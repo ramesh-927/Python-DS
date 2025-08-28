@@ -4,11 +4,11 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::941377112992:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::aws_accontno:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "hello",
-      "image": "941377112992.dkr.ecr.us-east-1.amazonaws.com/hello-ts:v1",
+      "image": "aws_accontno.dkr.ecr.us-east-1.amazonaws.com/hello-ts:v1",
       "portMappings": [
         { "containerPort": 3000, "protocol": "tcp" }
       ],
