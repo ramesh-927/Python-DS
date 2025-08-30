@@ -129,4 +129,12 @@
 2025-08-04 15:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
 2025-08-04 15:00:34,890 DEBUG [worker-10] Index: 100, Array size: 50
 2025-08-04 15:00:35,123 INFO [worker-10] Discarding invalid data
-2025-08-04 16:15
+2025-08-29 16:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
+2025-08-29 17:00:00 INFO System started successfully
+2025-08-29 17:15:22 ERROR Database connection failed: timeout
+2025-08-29 17:30:45 WARN Disk space low
+2025-08-29 17:45:10 ERROR Null pointer exception in module X
+2025-08-29 18:00:00 INFO User logged in
+2025-08-29 18:02:30 ERROR Authentication failed: invalid token
+2025-08-29 18:05:00 DEBUG Processing complete
+2025-08-29 19:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
