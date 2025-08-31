@@ -1,6 +1,5 @@
 """
-Q1. How would you parse a log file line by line in Python to find all error or warning messages?
-
+Q1:  How would you count the number of ERROR vs WARNING entries
 Answer: Optimal Answer:
 To avoid loading the whole file into memory, I would use a generator and process line by line.
 ✅ Efficient: Doesnot load entire file
