@@ -16,5 +16,5 @@ def parse_log(log_file):
             if pattern.search(line):
                 yield line.strip()
 
-for log in parse_log("error-code.log"):
+for log in parse_log("/Users/rameshgolla/Python-DS/Python-DS/log-fileparsing/error-code.log"):
     print(log)

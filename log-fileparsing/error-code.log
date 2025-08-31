@@ -48,31 +48,6 @@
 2025-08-02 06:15:34,234 ERROR [main] ERR-5001: Unexpected shutdown detected
 2025-08-02 06:15:34,567 DEBUG [main] Last operation: database flush
 2025-08-02 06:15:34,890 INFO [main] Initiating recovery procedures
-2025-08-02 06:30:45,123 INFO [main] Recovery completed successfully
-2025-08-02 07:00:12,456 DEBUG [monitor] Network latency: 45ms
-2025-08-02 07:00:12,789 WARNING [monitor] Network latency above threshold
-2025-08-02 08:15:23,012 INFO [http-5] Incoming request: DELETE /api/orders/456
-2025-08-02 08:15:23,345 DEBUG [http-5] Checking order status
-2025-08-02 08:15:23,678 INFO [http-5] Response sent: 204 No Content
-2025-08-03 00:00:01,901 ERROR [scheduler] ERR-4002: Cron job failed: cleanup_temp_files
-2025-08-03 00:00:02,234 DEBUG [scheduler] Error: Permission denied on /tmp/cache
-2025-08-03 00:00:02,567 INFO [scheduler] Escalating to admin
-2025-08-03 01:15:34,890 INFO [worker-4] Processing batch job #5678
-2025-08-03 01:15:35,123 DEBUG [worker-4] Records processed: 1500/2000
-2025-08-03 01:15:35,456 WARNING [worker-4] Slow processing detected
-2025-08-03 01:15:35,789 INFO [worker-4] Batch job #5678 completed
-2025-08-03 02:30:45,012 ERROR [http-6] ERR-2002: Authentication failure for user: test_user
-2025-08-03 02:30:45,345 DEBUG [http-6] Invalid token format
-2025-08-03 02:30:45,678 INFO [http-6] Response sent: 401 Unauthorized
-2025-08-03 03:00:12,901 INFO [monitor] System health check: CPU 60%, Memory 55%
-2025-08-03 03:00:13,234 DEBUG [monitor] Disk I/O: 120MB/s
-2025-08-03 03:00:13,567 WARNING [monitor] Disk I/O approaching limit
-2025-08-03 04:15:23,890 INFO [http-7] Incoming request: GET /api/reports
-2025-08-03 04:15:24,123 DEBUG [http-7] Generating report for Q2-2025
-2025-08-03 04:15:24,456 INFO [http-7] Response sent: 200 OK
-2025-08-03 06:00:01,789 ERROR [worker-5] ERR-3003: OutOfMemoryError in processLargeDataset()
-2025-08-03 06:00:02,012 DEBUG [worker-5] Dataset size: 3.5GB
-2025-08-03 06:00:02,345 INFO [worker-5] Reducing batch size and retrying
 2025-08-03 07:15:34,678 INFO [main] System metrics snapshot created
 2025-08-03 07:15:34,901 DEBUG [main] Snapshot size: 750KB
 2025-08-03 07:15:35,234 WARNING [main] Snapshot compression ratio low
@@ -118,23 +93,42 @@
 2025-08-04 11:00:24,234 INFO [scheduler] Scheduling retry in 10 minutes
 2025-08-04 12:15:34,567 INFO [worker-9] Processing batch job #9013
 2025-08-04 12:15:34,890 DEBUG [worker-9] Records processed: 1000/1500
-2025-08-04 12:15:35,123 WARNING [worker-9] Slow database response detected
-2025-08-04 12:15:35,456 INFO [worker-9] Batch job #9013 completed
-2025-08-04 13:00:12,789 ERROR [http-12] ERR-2003: Unauthorized access attempt
-2025-08-04 13:00:13,012 DEBUG [http-12] IP address: 192.168.1.100
-2025-08-04 13:00:13,345 INFO [http-12] Response sent: 403 Forbidden
-2025-08-04 14:15:23,678 INFO [main] System metrics collection started
-2025-08-04 14:15:23,901 DEBUG [main] Collecting metrics from 5 services
-2025-08-04 14:15:24,234 WARNING [main] Metrics collection took longer than expected
-2025-08-04 15:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
-2025-08-04 15:00:34,890 DEBUG [worker-10] Index: 100, Array size: 50
-2025-08-04 15:00:35,123 INFO [worker-10] Discarding invalid data
-2025-08-29 16:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
-2025-08-29 17:00:00 INFO System started successfully
-2025-08-29 17:15:22 ERROR Database connection failed: timeout
-2025-08-29 17:30:45 WARN Disk space low
-2025-08-29 17:45:10 ERROR Null pointer exception in module X
-2025-08-29 18:00:00 INFO User logged in
-2025-08-29 18:02:30 ERROR Authentication failed: invalid token
-2025-08-29 18:05:00 DEBUG Processing complete
 2025-08-29 19:00:34,567 ERROR [worker-10] ERR-3007: ArrayIndexOutOfBoundsException in parseData()
+[Sun Aug 31 11:02:03 2025] [info] [client 192.168.1.10:54321] Successful connection established on port 80
+[Sun Aug 31 11:03:15 2025] [error] [client 10.0.2.15:49234] Connection refused on port 443 for HTTPS request
+[Sun Aug 31 11:04:27 2025] [warning] [client 172.16.0.5:62345] High latency detected: 500ms from 172.16.0.5:62345
+[Sun Aug 31 11:06:40 2025] [info] [client 203.0.113.7:51234] User login successful on port 80
+[Sun Aug 31 11:08:12 2025] [error] [client 198.51.100.22:47890] File not found: /api/v1/invalid from 198.51.100.22:47890
+[Sun Aug 31 11:09:35 2025] [warning] [client 93.184.216.34:56789] Disk usage at 85% on server, port 8080
+[Sun Aug 31 11:11:48 2025] [info] [client 162.158.2.45:49123] Request processed: /home.html on port 80
+[Sun Aug 31 11:13:01 2025] [error] [client 104.18.41.19:53214] SSL handshake failed on port 443
+[Sun Aug 31 11:15:23 2025] [warning] [client 172.217.10.83:49876] Deprecated API call from 172.217.10.83:49876 on port 80
+[Sun Aug 31 11:17:06 2025] [info] [client 142.250.190.14:50987] Session started for user_id=1234 on port 443
+[Sun Aug 31 11:19:19 2025] [error] [client 185.199.108.153:54321] Database connection timeout on port 3306
+[Sun Aug 31 11:21:32 2025] [warning] [client 151.101.1.195:47654] Memory usage high: 90% on port 8080
+[Sun Aug 31 11:23:45 2025] [info] [client 198.41.238.32:52134] File uploaded successfully: /uploads/doc.pdf on port 80
+[Sun Aug 31 11:26:58 2025] [error] [client 64.233.184.104:48901] Authentication failure from 64.233.184.104:48901 on port 22
+[Sun Aug 31 11:29:11 2025] [warning] [client 34.102.136.180:54322meister
+System: 22] [info] [client 142.251.16.78:56712] Cache cleared successfully on port 80
+[Sun Aug 31 11:31:24 2025] [error] [client 172.64.150.12:49876] Internal server error: /api/v2/endpoint on port 443
+[Sun Aug 31 11:33:37 2025] [warning] [client 104.21.3.45:51234] Slow response time: 600ms from 104.21.3.45 on port 80
+[Sun Aug 31 11:36:50 2025] [info] [client 192.0.2.17:47654] Configuration loaded for service on port 8080
+[Sun Aug 31 11:39:03 2025] [error] [client 203.0.113.99:54321] Connection reset by peer on port 443
+[Sun Aug 31 11:42:16 2025] [warning] [client 209.85.231.104:56789] Rate limit exceeded for 209.85.231.104:56789 on port 80
+[Sun Aug 31 12:15:00 2025] ERROR [client 192.168.1.1:8080] onnection reset by peer on port 443
+[Sun Aug 31 12:20:00 2025] INFO [client 192.168.1.2:8081] Sample info
+[Sun Aug 31 12:25:00 2025] ERROR [client 192.168.1.3:8082] Database connection timeout on port 3306
+2025-08-31 11:40:01 INFO  Starting application service
+2025-08-31 11:42:15 INFO  Loaded configuration successfully
+2025-08-31 11:45:30 ERROR Database connection failed
+2025-08-31 11:47:05 WARN  Cache service response delayed
+2025-08-31 11:49:20 INFO  Retrying DB connection
+2025-08-31 11:50:55 ERROR Authentication failed for user admin
+2025-08-31 11:52:10 INFO  Background job scheduler started
+2025-08-31 11:54:45 ERROR Timeout while calling external API
+2025-08-31 11:56:00 INFO  API retry succeeded
+2025-08-31 11:57:35 WARN  Memory usage crossed 75%
+2025-08-31 11:58:50 INFO  Request handled successfully
+2025-08-31 12:00:05 ERROR Payment service unavailable
+2025-08-31 12:02:30 INFO  User session created
+2025-08-31 12:04:10 ERROR Disk write failure on /dev/
