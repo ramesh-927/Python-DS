@@ -5,7 +5,7 @@ Write a function that deduplicates alerts within a 5-minute window for the same 
 
 """
 
-from datetime import datetime, timedelta
+from datetime import timedelta, datetime
 
 def deduplicate_alerts(alerts, window_minutes=5):
     # Convert window size to a timedelta (e.g., 5 minutes)
@@ -33,6 +33,7 @@ def deduplicate_alerts(alerts, window_minutes=5):
             last_seen[key] = ts
     
     return deduped
+
 
 # Test with sample alerts
 alerts = [
