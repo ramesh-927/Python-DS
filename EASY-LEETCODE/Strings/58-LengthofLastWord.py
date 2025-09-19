@@ -38,3 +38,4 @@ s = "luffy is still joyboy"
 res = sol.lengthOfLastWord(s)
 print(res)
 
+# O(n) time complexity (worst case: traverse the entire string once) and O(1) space (no extra data structures).
