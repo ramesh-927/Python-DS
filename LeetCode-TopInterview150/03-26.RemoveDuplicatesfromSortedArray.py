@@ -47,3 +47,6 @@ if __name__ == "__main__":
     nums = [0,0,1,1,1,2,2,3,3,4]
     result = sol.removeDuplicates(nums)
     print(result)
+
+# Time complexity: O(n)
+# Space complexity: O(1)
