@@ -1,3 +1,6 @@
+"""
+Write a Python script to Count the occurances of the Error in log file
+"""
 def count_keyword(log_file, keyword):
     keyword_lower = keyword.lower()
     count = 0
