@@ -57,3 +57,7 @@ if __name__ == "__main__":
     print("Input:", nums)
     print("Triplets:", res)
     print("Number of triplets:", len(res))
+
+
+# Time Complexity : O(n²) Two-pointer after sort (optimized)
+# Space Complexity : O(1) extra (plus O(k) for result)
