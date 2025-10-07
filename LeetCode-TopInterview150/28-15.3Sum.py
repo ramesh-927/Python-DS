@@ -61,3 +61,18 @@ if __name__ == "__main__":
 
 # Time Complexity : O(n²) Two-pointer after sort (optimized)
 # Space Complexity : O(1) extra (plus O(k) for result)
+
+# Bruteofrce  Approach not optimal soltion:
+"""def three_sum_hash(nums):
+    n = len(nums)
+    res_set = set()
+    for i in range(n):
+        target = -nums[i]
+        seen = set()
+        for j in range(i+1, n):
+            comp = target - nums[j]
+            if comp in seen:
+                trip = tuple(sorted((nums[i], nums[j], comp)))
+                res_set.add(trip)
+            else:
+                seen.add(nums[j]) """
