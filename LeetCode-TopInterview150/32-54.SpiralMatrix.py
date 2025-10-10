@@ -31,13 +31,13 @@ class Solution:
                 res.append(matrix[i][right])
             right -= 1
 
-            if top <= bottom:
-                for j in range(right, left - 1, -1):
+            if top <= bottom:      
+                for j in range(right, left - 1, -1):  # Traverse bottom row
                     res.append(matrix[bottom][j])
                 bottom -= 1
             
             if left <= right:
-                for i in range(bottom, top -1, -1):
+                for i in range(bottom, top -1, -1):  # Traverse left column
                     res. append(matrix[i][left])
                 left += 1
         return res
@@ -47,6 +47,6 @@ if __name__ == "__main__":
     matrix = [[1,2,3],[4,5,6],[7,8,9]]
     res = sol.spiralMatrix(matrix)
     print(res)
-    
+
 # TimeComplexity: 	O(m × n)	Each element visited once
 # SpaceComplexity : O(1)	Output list only (no extra data structures)
