@@ -1,0 +1,281 @@
+1. Given an array of positive integers and a target value, write a function which will return the indices of two numbers in the array which add up to the target value.
+
+For example, given the input array [1,5, 7, 2, 4] and a target value of 8, the solution is [0, 2] i.e. the indices for 1 + 7.
+
+
+
+2.
+log format
+2021 09/21, 200, some description
+2021 09/21, 200, some description
+2021 09/21, 304, some description
+2021 09/21, 404, some description
+...
+
+goal is to parse above log file, and print out on each day, how many counts on each response code
+
+3.
+Parse log file like below and generate output with the counts from each IP
+
+## input
+10.23.56.7 - - GET /login
+10.23.56.3 - - GET /login
+10.23.56.7 - - POST /login
+10.23.56.4 - - POST /login
+10.23.56.7 - - GET /login
+
+## output
+10.23.56.7 3
+10.23.56.3 1
+10.23.56.4 1
+
+ANS:
+
+from collections import defaultdict
+
+# Read the log file
+with open('logfile.txt', 'r') as file:
+    log_lines = file.readlines()
+
+# Count occurrences of each IP address
+ip_counts = defaultdict(int)
+for line in log_lines:
+    ip = line.split()[0]
+    ip_counts[ip] += 1
+
+# Generate the output
+for ip, count in ip_counts.items():
+    print(f'{ip} {count}')
+
+
+
+4.
+ Write a python program that accepts the following input:
+1. The range of a solar system (the distance from the sun to the edge of the system)
+2. A list of solar objects(planets, moons), and their distance from the center of the solar system (the sun)
+
+The program should return a list of planets that are within the range of the solar system.
+
+Note: If two solar objects are within 2 million miles of each other, consider the object nearest to the sun as a moon.
+
+Example1:
+   
+Input:
+    range of solar system: 3674 million miles
+
+5.
+ We have alarms on logs with below names
+ 
+usFatalerrorlogs_spike_on_usage_of_space
+inFatalerrorlogs_spike_on_usage_of_space
+MemoryLeak_detected_us_Error_log
+MemoryLeak_detected_de_Error_log
+inode_ran_out_in_fatal_log_in
+inode_ran_out_in_fatal_log_de
+inode_ran_out_in_error_log_in
+--
+--
+ We have four countries us,de,cn,in
+ 
+For above given alarm strings, I need a way to group all related alarms along with regex for the same.
+Overall I need output as Map:
+ 
+##Fatalerrorlogs_spike_on_usage_of_space -->
+[usFatalerrorlogs_spike_on_usage_of_space,
+inFatalerrorlogs_spike_on_usage_of_space,
+cnFatalerrorlogs_spike_on_usage_of_space,
+deFatalerrorlogs_spike_on_usage_of_space]
+ 
+inode_ran_out_in_fatal_log_## -->
+inode_ran_out_in_fatal_log_in
+inode_ran_out_in_fatal_log_de
+inode_ran_out_in_fatal_log_cn
+inode_ran_out_in_fatal_log_us
+ 
+etc
+
+6.
+Write a rate limiter function (that returns a bool) that will limit calls to 3 requests a second
+Your manager approaches you and says that your company web site is getting DDOS attacks and they would like you to write some
+kind of ratelimiter function that can be shared across all webserver code.  It will be in webserver library module. The rate limiter
+should return a boolean value: return True if it is OK to serve a result, otherwise False if the request should be rate limited.
+
+#!/usr/bin/python3
+import time
+# All solution code goes here
+# Main: for this exercise assume we want to rate limit at 3 requests per second.
+for i in range(30):
+print(can_i_serve()) # can replace "can_i_serve" w/ your implementation
+time.sleep
+
+7.
+
+---
+SCENARIO:  Using the free public Wikipedia API, determine top 10 viewed pages for April 2022.  Documentation at:  https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
+
+This requires making a relatively simple API call (in documentation) but iterate through the days of the month programmatically, parsing JSON and then aggregating the results using the "views" parameter on the api page)
+
+8.
+Given a CSV in the following format, write a Python script that will tell you how many times each unique Error_id occurs on each unique day.  Assume the file is millions of lines and the Error_id and days can change.  After writing, discuss higher-level optimizations and error handling.
+
+Day,Error_id,Description
+2022-01-01,ERROR_1,Some Random Text
+
+
+____________________________________________________
+
+Scripting Questions Shell / Python
+1. Given a log file, find the number of lit response codes along with the timestamp also provide the number of hits for each response (Amazon, apple )
+Examnale of the data content: (
+12:10-10 serveriP: 10.3.4.5 UIR home/website responseCode 400 TTL: 2200
+12:10-10 serveriP: 10.3.4.4 UIR /home/website responseCode 200 TTL : 2000
+12:10:10 serverIP: 10. 3.4.5 UIR /home/website responseCode 504 TTL : 2000
+12:10:10 serverIP: 10.3.4.5 UIR /home/website responseCode 400 TTL : 2000
+]
+2. For a set of conditions validate if the given input is valid (wolmart,google )
+3. Read a data set / file and store the content in another file indexed based on CPU hunger ( apple )
+Example of the data content: (
+#I processID PPID CPU% PORT
+)
+4. Find all the commented lines in the code for o given folder directory ( microsoft )
+5. Find all the number that sum put to the target [1,3,4,5,6,8] target 8 - [1,3,4](3,5] ( apple, oracle )
+
+___________
+
+How do you determine and provision EC2 for a new project? instance type, size, memory, storage, cpu etc
+Suppose there is a new Apple service or platform, how do you migrate all the millions or billions of Apple user accounts to the new service without negatively impacting any single user?
+
+______________
+
+
+ have collected the list of questions asked to Production Engineer at Facebook .Please try to solve this and post your efficient solution in comments.
+
+1.Write a script that connects to 100 hosts, looks for a particular process and sends an email with a report.
+2.Read data from an API call that gives structured data in JSON format and arrange that data in the requested format.
+3.Reading from STDIN and receiving two parameters which was host and ports that I need to reach and print status,what if this input is the file with 1tb(here interaction with large inputs & optimization)
+4.read innate file and parse the strings to count how many times an email address is found 
+5.You will be supplied with two data files in CSV format .
+The first file contains statistics about various dinosaurs. The second file contains additional data.
+Given the following formula, speed = ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
+Where g = 9.8 m/s^2 (gravitational constant)
+Write a program to read in the data files from disk, it must then print the names of only the bipedal dinosaurs from fastest to slowest.
+
+$ cat dataset1.csv
+NAME,LEG_LENGTH,DIET
+Hadrosaurus,1.4,herbivore
+Struthiomimus,0.72,omnivore
+Velociraptor,1.8,carnivore
+Triceratops,0.47,herbivore
+Euoplocephalus,2.6,herbivore
+Stegosaurus,1.50,herbivore
+Tyrannosaurus Rex,6.5,carnivore
+$ cat dataset2.csv
+NAME,STRIDE_LENGTH,STANCE
+Euoplocephalus,1.97,quadrupedal
+Stegosaurus,1.70,quadrupedal
+Tyrannosaurus Rex,4.76,bipedal
+Hadrosaurus,1.3,bipedal
+Deinonychus,1.11,bipedal
+Struthiomimus,1.24,bipedal
+Velociraptorr,2.62,bipedal
+Please come up with optimized solution for this questions.
+____________
+\
+
+
+-------------------
+
+
+rascenge 
+you are provided with an array of deployment results. Parse the data and determine the number of deployments that were successful or unsuccessful. Also test that the json input is valid based on the parameters listed below, otherwise mark it as an error. 
+Return the result with the number deployments that were successful, failed, or errors encountered parsing the data.
+Note: Make sure to select your preferred language in the dropdown menu prior to starting the challenge.
+Function Description
+Complete the evaluate_deployments function in the editor below.
+evaluate_deployments has the following parameter:
+﻿﻿deployments[n]: an array of JSON string data with two required fields:
+﻿﻿deployment_id: The valid format is a 12-character string starting with d- and 10 lowercase alphanumeric characters
+﻿﻿status: Valid entries are Success and Fail
+Deployments parameter example:
+[
+' {"deployment_id": "d-123456abcd",
+"status": "Success"}',
+'{"deployment_id": "d-098765efgh",
+Test Result
+7 Sample Case 0
+Sample Input For Custom Testing
+2
+{"deployment_id": "d-12345678ab",
+"status": "Success"}
+{"deployment_id": "d-09876543cd",
+"status": "Fail"}
+Sample Output
+1
+1
+0
+Explanation
+One successful and one failed deployment. All entries provide valid inputs.
+• Sample Case 1
+Sample Input For Custom Testing
+2
+{"deployment_id": "d-12345678ab",
+"status": "Success"}
+{"deployment_id": "d-12345678cd",
+"status": "ABCDE"}
+Sample Output
+1
+1
+Explanation
+The second entry provides an invalid status, so it is marked as an error.
+
+___________
+
+
+Here are some advanced shell scripting interview questions that could align well with your experience for senior DevOps and SRE roles at companies like Apple, Microsoft, and Amazon:
+
+### File and Directory Management
+1. **How would you write a script to monitor the disk space usage and send an alert if usage exceeds a certain threshold?**
+2. **Write a script to find the 10 largest files in a directory (including subdirectories) and display their paths and sizes.**
+3. **How would you automate the deletion of files older than a certain number of days in a specific directory?**
+4. **Explain how you would write a script to archive and compress log files periodically.**
+   
+### Text Processing and Log Management
+1. **Write a script to search for a specific error pattern in log files and count occurrences. How would you make the script efficient for large log files?**
+2. **Explain how you would handle extracting specific data fields from a CSV file and use them as inputs to another command or script.**
+3. **How would you capture a specific log event, along with the 10 lines before and after it, across multiple log files?**
+4. **How would you use `awk` or `sed` to extract and replace text patterns in files based on dynamic criteria?**
+
+### Process Management and Automation
+1. **Describe how you would write a script to monitor the health of a running service, such as a web server or database, and restart it if it fails.**
+2. **Explain how you would use shell scripting to monitor CPU and memory usage of a specific process and log usage if thresholds are crossed.**
+3. **Write a script to identify zombie processes on a system and attempt to clear them.**
+4. **How would you schedule a cron job to execute a shell script only if certain conditions, such as specific file existence or process status, are met?**
+
+### Networking and Security
+1. **How would you use a shell script to monitor network connectivity, for example, checking connectivity to critical services and alerting if connections fail?**
+2. **Write a script to check the SSL certificate expiration date for a list of domains.**
+3. **How would you handle file permissions and ownership changes in a script to securely deploy an application?**
+4. **Explain how you might automate IP whitelisting for a dynamic IP environment, using shell scripts.**
+
+### Cloud Integration and Deployment
+1. **How would you automate the deployment of a Docker container with shell scripting, including checks for existing containers and images?**
+2. **Explain how you would use a shell script to manage AWS resources, such as spinning up instances, using AWS CLI.**
+3. **Write a script to retrieve the health status of instances in a cloud environment (AWS, Azure, GCP) and alert if any instances are unhealthy.**
+4. **How would you handle secure storage of API keys in shell scripts that interact with cloud services?**
+
+### Advanced Shell Scripting Concepts
+1. **How would you use functions in shell scripts to organize code for reusability and readability, especially in large scripts?**
+2. **Explain how you would debug a complex shell script with multiple conditional branches and loops.**
+3. **Describe how you would use `trap` to handle cleanup tasks in case a script is interrupted (e.g., kill the script, but ensure temp files are deleted).**
+4. **How do you manage error handling in shell scripts, especially in multi-step processes where each step's success is critical?**
+5. **Describe a scenario where you would use parallel processing in a shell script and how you would implement it.**
+
+### Performance and Optimization
+1. **How would you profile and optimize a long-running shell script that processes large files or runs multiple intensive commands?**
+2. **Explain the use of tools like `xargs` and `parallel` in handling large datasets efficiently in a shell script.**
+3. **How would you use `grep` with regular expressions to filter out only certain types of log entries, focusing on high-performance approaches?**
+4. **What are the advantages of using shell scripting over other languages for specific tasks in a DevOps/SRE environment, and when might you switch to another language like Python or Go?**
+
+These questions cover scenarios and optimizations that match the expertise expected in senior DevOps and SRE roles at top tech companies. They’ll allow you to demonstrate not only technical scripting skills but also insights into efficient, maintainable, and scalable scripting solutions for production environments.
+
+
