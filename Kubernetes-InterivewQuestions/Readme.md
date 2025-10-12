@@ -14,8 +14,10 @@ Third, to ensure adequate underlying capacity, I’d enable the Cluster Autoscal
 
 Fourth, I’d fine-tune scaling behavior to prevent oscillation. Using HPA’s behavior settings, stabilization windows, and PodDisruptionBudgets, I can ensure controlled, gradual scaling that avoids thrashing during short traffic spikes.
 For event-driven workloads, like asynchronous jobs or message queues, I’d integrate KEDA to scale based on external triggers (e.g., Kafka lag or message count), even allowing scale-to-zero for cost efficiency.
+
 Finally, I’d add observability — integrating Prometheus, Grafana, and alerting — to visualize scaling patterns and verify responsiveness under load tests.
 If predictable traffic patterns exist, I might complement this with predictive or scheduled autoscaling to pre-warm capacity ahead of known peaks.
+
 In summary: my autoscaling design combines HPA (Pod level), Cluster Autoscaler (node level), and custom or event-driven metrics (via Prometheus/KEDA) — resulting in a resilient, self-healing, and cost-optimized system that scales seamlessly with real-world demand.
 
 Highlights to emphasize in delivery:
