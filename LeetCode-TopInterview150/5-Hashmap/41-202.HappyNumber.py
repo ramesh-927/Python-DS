@@ -46,4 +46,9 @@ if __name__ == "__main__":
 # Time Complexity :  O(log n)	
 # Space Complexity:  O(1)	
 
+# Concept: Detect number transformation cycles.
+# Approach: Use Floyd’s cycle detection or a set.
+# Key Function: Sum of squares of digits.
+# Edge Case: Small numbers like 1, 7 are happy by definition.
+
 
