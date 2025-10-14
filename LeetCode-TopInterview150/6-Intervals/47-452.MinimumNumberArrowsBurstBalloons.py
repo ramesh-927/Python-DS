@@ -48,8 +48,10 @@ if __name__ == "__main__":
         ([[10,16],[2,8],[1,6],[7,12]], 2),
         ([], 0),
         ([[1,2],[3,4],[5,6],[7,8]], 4),
-        ([[1,10],[2,3],[3,4],[4,5]], 1),
-    ]
+        ([[1,10],[2,3],[3,4],[4,5]], 1), ]
     for pts, expected in tests:
         out = sol.findMinArrowShots(pts)
         print(f"points={pts} -> arrows={out} (expected={expected})")
+        
+# Time complexity	O(n log n) due to sorting (n = number of intervals)
+# Space complexity	O(1) extra (ignoring input sort in-place). If sort makes a copy, O(n).
