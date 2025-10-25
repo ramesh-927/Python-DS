@@ -1,0 +1,7 @@
+What is performance:- Ability to execute its functions effectively and efficiently, delivering a quick 
+and responsive experience for end-users.
+In other Words it a measure of How fast or responsive our system uder a given workload  and a given software.
+
+Throuhput :- Throuhput is measure of system how many request can process in a given time. its a rate
+ 
+
