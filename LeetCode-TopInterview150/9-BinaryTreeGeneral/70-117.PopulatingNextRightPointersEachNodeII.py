@@ -55,21 +55,7 @@ class Solution:
                 node = node.next
             head = dummy.next  # move to first node of next level
         return root
-def print_levels_with_next(root: Node):
-    level_start = root
-    while level_start:
-        cur = level_start
-        line = []
-        next_level_start = None
-        while cur:
-            line.append(str(cur.val))
-            if not next_level_start:
-                # find the start of the next level (first existing child)
-                next_level_start = cur.left or cur.right
-            cur = cur.next
-        print(" -> ".join(line) + " -> None")
-        level_start = next_level_start
-
+    
 # Example usage:
 # Build tree: [1,2,3,4,5,null,7]
 n1 = Node(1)
@@ -78,13 +64,5 @@ n4 = Node(4); n5 = Node(5); n7 = Node(7)
 n1.left, n1.right = n2, n3
 n2.left, n2.right = n4, n5
 n3.right = n7
-
 sol = Solution()
 root = sol.connect(n1)
-print_levels_with_next(root)
-# Expected:
-# 1 -> None
-# 2 -> 3 -> None
-# 4 -> 5 -> 7 -> None
-# Time	O(n) — visit each node constant times
-# Extra Space	O(1) auxiliary (dummy/tail pointers). Recursion stack not used.
