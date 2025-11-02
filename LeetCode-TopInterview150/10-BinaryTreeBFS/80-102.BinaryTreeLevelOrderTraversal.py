@@ -25,6 +25,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+        
 class Solution:
     def levelOrder(self, root):
         if not root:
