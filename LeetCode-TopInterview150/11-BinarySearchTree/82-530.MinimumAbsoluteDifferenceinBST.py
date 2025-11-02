@@ -20,29 +20,36 @@ Constraints:
 The number of nodes in the tree is in the range [2, 104].
 0 <= Node.val <= 105
 """
-class TreeNode:
+# Definition for a binary tree node (LeetCode style).
+class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution:
+class Solution(object):
     def getMinimumDifference(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         self.prev = None
         self.min_diff = float('inf')
+
         def inorder(node):
             if not node:
                 return
             inorder(node.left)
             if self.prev is not None:
+                # node.val and self.prev are ints; subtraction safe
                 diff = node.val - self.prev
                 if diff < self.min_diff:
                     self.min_diff = diff
             self.prev = node.val
             inorder(node.right)
+
         inorder(root)
-        return int(self.min_diff)
-            
+        return int(self.min_diff) 
 if __name__ == "__main__":
     root = TreeNode(4,
         TreeNode(2, TreeNode(1), TreeNode(3)),
