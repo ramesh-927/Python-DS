@@ -56,3 +56,8 @@ if __name__ == "__main__":
         TreeNode(6))
     sol = Solution()
     print(sol.getMinimumDifference(root))
+# | Measure          | Result                                                                                                 |
+# | ---------------- | ------------------------------------------------------------------------------------------------------ |
+# | Time complexity  | **O(n)** — visit each node once (inorder traversal)                                                    |
+# | Space complexity | **O(h)** — recursion stack where h is tree height (worst-case O(n), average O(log n) for balanced BST) |
+# | Extra space      | O(1) extra (we only store `prev` and `min_diff`)                                                       |
