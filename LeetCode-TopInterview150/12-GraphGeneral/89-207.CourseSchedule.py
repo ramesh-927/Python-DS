@@ -23,33 +23,32 @@ All the pairs prerequisites[i] are unique.
 class Solution:
     def canFinish(self, numCourses, prerequisites):
         graph = {i: [] for i in range(numCourses)}
-        
-        # Build adjacency list
+
+        # Build graph
         for course, prereq in prerequisites:
             graph[prereq].append(course)
-        
-        state = [0] * numCourses  # 0=unvisited, 1=visiting, 2=visited
-        
+
+        vistied = [0] * numCourses  # 0=new, 1=exploring, 2=done
+
         def dfs(course):
-            if state[course] == 1:  # Found a cycle
+            if vistied[course] == 1:  # found a loop
                 return False
-            if state[course] == 2:  # Already processed
+            if vistied[course] == 2:  # already checked
                 return True
-            
-            state[course] = 1  # Mark as visiting
-            
-            for neighbor in graph[course]:
-                if not dfs(neighbor):
+
+            vistied[course] = 1  # mark exploring
+
+            for next_course in graph[course]:
+                if not dfs(next_course):
                     return False
-            
-            state[course] = 2  # Mark as visited
+
+            vistied[course] = 2  # mark done
             return True
-        
-        for course in range(numCourses):
-            if state[course] == 0:
-                if not dfs(course):
-                    return False
-        
+
+        for c in range(numCourses):
+            if not dfs(c):
+                return False
+            
         return True
 
 if __name__=="__main__":
