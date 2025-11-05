@@ -61,3 +61,7 @@ if __name__ == "__main__":
     prerequisites = [[1,0],[2,0],[3,1],[3,2]]
     out = sol.findOrder(numCourses, prerequisites)
     print(f"'{numCourses}' and '{prerequisites}' are : ", out)  
+
+# Time complexity: O(V + E).
+# Space: O(V + E) for graph + O(V) recursion stack (worst-case).
+# Returns [] immediately if a cycle is detected.
