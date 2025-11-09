@@ -36,3 +36,8 @@ if __name__ == "__main__":
     out = sol.combine(n, k)
     print(f"All possible comniation of '{n}' and '{k}'  are :  ", out)
     
+# | Aspect | Complexity           |
+# | ------ | -------------------- |
+# | Time   | O(C(n, k) * k)       |
+# | Space  | O(k) recursion depth |
+
