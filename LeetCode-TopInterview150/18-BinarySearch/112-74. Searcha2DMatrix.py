@@ -58,3 +58,5 @@ if __name__ == "__main__":
 # | Approach      | Time            | Space    |
 # | ------------- | --------------- | -------- |
 # | Binary Search | **O(log(m·n))** | **O(1)** |
+
+# Use binary search. At each mid, determine which half is sorted and whether target lies in it. Shrink search space accordingly.

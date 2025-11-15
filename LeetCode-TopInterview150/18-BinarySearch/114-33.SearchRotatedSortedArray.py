@@ -50,3 +50,4 @@ if __name__ == "__main__":
 
 # Time: O(log n) — each step halves the search range.
 # Space: O(1) — only a few pointers used.
+# I use binary search. At each mid, determine which half is sorted and whether target lies in it. Shrink search space accordingly.
