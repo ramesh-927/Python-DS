@@ -63,3 +63,7 @@ if __name__ == "__main__":
     print(sol.findMaximizedCapital(2, 0, [1,2,3], [0,1,1]))  
     print(sol.findMaximizedCapital(3, 0, [1,2,3], [0,1,2])) 
 
+# Time: O(n log n + k log n) (sorting + heap ops)
+
+# Space: O(n)
+
