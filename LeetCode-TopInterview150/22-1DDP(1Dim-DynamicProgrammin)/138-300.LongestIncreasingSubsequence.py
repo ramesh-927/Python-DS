@@ -45,6 +45,9 @@ if __name__ == "__main__":
 # DP O(n²),O(n²),O(n),"Simple, easy to explain"
 # Binary Search O(n log n),O(n log n),O(n),Best choice for interviews
 
+# I used the O(n log n) dynamic programming + binary search approach using a 'tails' array.
+# It maintains the smallest possible tail for each subsequence length, allowing us to extend or update efficiently with binary search
+
 # def lengthOfLIS(nums: list[int]) -> int:
 #   if not nums:
 #        return 0
