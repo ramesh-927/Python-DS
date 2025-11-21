@@ -22,6 +22,17 @@ given grid_size of 8, would return ( (2,1), (2, 2), (2,3)) :
 """
 class Solution:
     def findBattleShip(self, N):
+        """
+        You are given an N×N grid that contains exactly one battleship of length 3
+        placed horizontally or vertically (no diagonals).
+        You have a function bomb_location(r: int, c: int) -> bool that returns True
+        if the cell (r,c) contains part of the battleship.
+        Coordinates are 1-indexed.
+    
+        Return the three occupied cells in sorted order 
+        (top-to-bottom for vertical, left-to-right for horizontal).
+        """
+        
         hits = []
         
         # Phase 1: Find any 3 cells that belong to the battleship
@@ -61,3 +72,6 @@ if __name__ == "__main__":
     sol = Solution()
     result = sol.findBattleShip(8)  # N= 8, for example
     print(result)  # Expected: ((2, 1), (2, 2), (2, 3))
+
+# Time Complexity: O(N) in the worst case (we stop as soon as we find the third hit)
+# Space Complexity: O(1) – only storing 3 coordinates
