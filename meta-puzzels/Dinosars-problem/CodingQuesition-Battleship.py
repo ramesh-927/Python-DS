@@ -75,3 +75,7 @@ if __name__ == "__main__":
 
 # Time Complexity: O(N) in the worst case (we stop as soon as we find the third hit)
 # Space Complexity: O(1) – only storing 3 coordinates
+
+# I first locate any part of the ship by scanning the grid. Once a hit is found, 
+# I check neighboring cells to detect orientation. Then I expand along that orientation to identify 
+# all three ship coordinates. This approach guarantees minimal bombing attempts to sink the ship.
