@@ -55,3 +55,8 @@ if __name__ =="__main__":
     
 # Time Complexity: O(n)
 # Space Complexity: O(1)
+
+# We do a single linear scan maintaining four state variables: best cost and profit after the 
+# first transaction, and best effective cost and profit after the second. 
+# This compresses the DP into O(1) space and yields the maximum profit for up to two transactions 
+# in O(n) time.
