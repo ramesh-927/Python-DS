@@ -1,0 +1,97 @@
+"""
+You are given the root of a binary tree.
+A ZigZag path for a binary tree is defined as follow:
+1. Choose any node in the binary tree and a direction (right or left).
+2. If the current direction is right, move to the right child of the current node; otherwise, move to the left child.
+3. Change the direction from right to left or from left to right.
+4. Repeat the second and third steps until you can't move in the tree.
+Zigzag length is defined as the number of nodes visited - 1. (A single node has a length of 0).
+Return the longest ZigZag path contained in that tree.
+Example 1:
+       1
+        \
+         1
+        / \
+       1   1
+           / \
+          1    1
+          \
+           1
+            \
+             1
+Input: root = [1,null,1,1,1,null,null,1,1,null,1,null,null,null,1]
+Output: 3
+Explanation: Longest ZigZag path in blue nodes (right -> left -> right).
+Example 2:
+         1
+        / \
+       1   1
+      / \  
+     1   1   
+      \  
+       1
+Input: root = [1,1,1,null,1,null,null,1,1,null,1]
+Output: 4
+Explanation: Longest ZigZag path in blue nodes (left -> right -> left -> right).
+Example 3:
+Input: root = [1]
+Output: 0
+Constraints:
+The number of nodes in the tree is in the range [1, 5 * 104].
+1 <= Node.val <= 100
+"""
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def longestZigZag(self, root):
+        self.ans = 0
+
+        def dfs(node):
+            if not node:
+                return (0, 0)
+            
+            L = dfs(node.left)
+            R = dfs(node.right)
+            # if we start by going left from current node:
+            start_left  = 1 + L[1] if node.left  else 0
+            # if we start by going right from current node:
+            start_right = 1 + R[0] if node.right else 0
+            # update global maximum
+            self.ans = max(self.ans, start_left, start_right)
+            return (start_left, start_right)
+
+        dfs(root)
+        return self.ans
+    
+#-------------------------------------------------------------------------------------------#
+
+def build_tree_from_list(vals):
+    if not vals:
+        return None
+    nodes = [None if v is None else TreeNode(v) for v in vals]
+    kid_idx = 1
+    for node in nodes:
+        if node is not None:
+            if kid_idx < len(nodes):
+                node.left = nodes[kid_idx]; kid_idx += 1
+            if kid_idx < len(nodes):
+                node.right = nodes[kid_idx]; kid_idx += 1
+    return nodes[0]
+
+vals = [1,1,1,None,1,None,None,1,1,None,1]
+root = build_tree_from_list(vals)
+print(Solution().longestZigZag(root))  # prints 4
+
+
+# Time    |  O(n) — visit each node once |
+# Space   | O(h) — recursion stack, where h is tree height (O(n) worst-case, 
+# O(log n) average for balanced tree) 
+
+
+# We do a single DFS returning the longest ZigZag starting-left and starting-right for each node; 
+# each node’s values are computed from its children (start_left = 1 + child.start_right, etc.). 
+# This yields O(n) time and O(h) space and updates a global maximum during traversal
