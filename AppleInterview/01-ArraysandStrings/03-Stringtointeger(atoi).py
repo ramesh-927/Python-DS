@@ -67,14 +67,12 @@ class Solution:
         
         sign = 1
         i = 0
-        
         # Determine sign
         if s[i] == '-':
             sign = -1
             i += 1
         elif s[i] == '+':
-            i += 1
-        
+            i += 1    
         num = 0
         while i < len(s) and s[i].isdigit():
             digit = int(s[i])                      # Fixed: int(s[i]), not int([s[i]])
