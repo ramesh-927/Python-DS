@@ -40,10 +40,9 @@ if __name__== "__main__":
     print(sol.trapRainWater([0,1,0,2,1,0,1,3,2,1,2,1]))            # Output  : 6
     print(sol.trapRainWater([4,2,0,3,2,5]))                       # Output  : 9
   
-# "We use two pointers starting from both ends.At each step we move the pointer with the smaller 
-# height, because the water level is bounded by the shorter wall.
-# While moving, we keep track of the maximum height seen on each side and add trapped 
-# water accordingly."
+# I used the two-pointer greedy approach: move the smaller side inward while maintaining left_max 
+# and right_max, and accumulate max(0, bound - height) at each step. This produces a single-pass O(n) 
+# time and O(1) space solution
 
 # Time Complexity : O(n)
 # Space Complexity : O(1)
