@@ -25,19 +25,22 @@ class Solution:
             return []
         
         def backtrack(index, path):
-
-            if len(path) == len(digits):
-                result.append("".join(path))
+            if index == len(digits):           # built full combination
+                result.append(''.join(path))
                 return
-            
-            for ch in phone[digits[index]]:
-                path.append(ch)
-                backtrack(index + 1, path)
-                path.pop()
-
+            for letter in phone[digits[index]]:   # try each letter for current digit
+                path.append(letter)
+                backtrack(index + 1, path)        # go to next digit
+                path.pop()                        # backtrack (undo choice)
+    
         backtrack(0, [])
         return result
 
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.letterCombinations("23"))
+    print(sol.letterCombinations("2"))
+    print(sol.letterCombinations("224"))
 
             
 
