@@ -28,7 +28,7 @@ class Solution:
                 mid += 1
             elif nums[mid] == 1:
                 mid += 1
-            else:
+            else:      # nums[mid] == 2
                 nums[mid], nums[high] = nums[high], nums[mid]
                 high -= 1
         return nums
@@ -37,3 +37,10 @@ if __name__== "__main__":
     sol = Solution()
     print(sol.sortColors([2,0,2,1,1,0]))     # [0, 0, 1, 1, 2, 2]
     print(sol.sortColors([2,0,1]))           # [0,1,2]
+
+# Time Complexity: O(n) – We scan the array once.
+# Space Complexity: O(1) – Only three variables, no extra arrays.
+
+# I used the Dutch National Flag algorithm with three pointers (low for 0s, mid for scanning, high 
+# for 2s) to sort the array in-place in a single pass. This achieves O(n) time complexity and O(1) 
+# space, making it optimal for grouping fixed distinct values without general sorting overhead.
