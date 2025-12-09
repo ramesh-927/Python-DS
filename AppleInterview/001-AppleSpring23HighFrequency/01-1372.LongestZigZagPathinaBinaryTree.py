@@ -47,50 +47,29 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def longestZigZag(self, root):
-        self.ans = 0
-
+    def longestZigZag(self, root: TreeNode) -> int:
+        self.res = 0  # Global max length (edges)
+        
         def dfs(node):
             if not node:
-                return (0, 0)
-            
-            L = dfs(node.left)
-            R = dfs(node.right)
-            # if we start by going left from current node:
-            start_left  = 1 + L[1] if node.left  else 0
-            # if we start by going right from current node:
-            start_right = 1 + R[0] if node.right else 0
-            # update global maximum
-            self.ans = max(self.ans, start_left, start_right)
-            return (start_left, start_right)
-
+                return -1, -1  # For math: 1 + (-1) = 0 if no child
+            left = dfs(node.left)
+            right = dfs(node.right)
+            # Max starting left: 1 + left child's max starting right
+            start_left = 1 + left[1]
+            # Max starting right: 1 + right child's max starting left
+            start_right = 1 + right[0]
+            # Update global max
+            self.res = max(self.res, start_left, start_right)
+            # Return maxes for this node
+            return start_left, start_right
+        
         dfs(root)
-        return self.ans
+        return self.res
     
-#-------------------------------------------------------------------------------------------#
-
-def build_tree_from_list(vals):
-    if not vals:
-        return None
-    nodes = [None if v is None else TreeNode(v) for v in vals]
-    kid_idx = 1
-    for node in nodes:
-        if node is not None:
-            if kid_idx < len(nodes):
-                node.left = nodes[kid_idx]; kid_idx += 1
-            if kid_idx < len(nodes):
-                node.right = nodes[kid_idx]; kid_idx += 1
-    return nodes[0]
-
-vals = [1,1,1,None,1,None,None,1,1,None,1]
-root = build_tree_from_list(vals)
-print(Solution().longestZigZag(root))  # prints 4
-
-
-# Time    |  O(n) — visit each node once |
-# Space   | O(h) — recursion stack, where h is tree height (O(n) worst-case, 
+# Time Compleixty: O(n) — visit each node once 
+# Space Complexity:  O(h) — recursion stack, where h is tree height (O(n) worst-case, 
 # O(log n) average for balanced tree) 
-
 
 # We do a single DFS returning the longest ZigZag starting-left and starting-right for each node; 
 # each node’s values are computed from its children (start_left = 1 + child.start_right, etc.). 
