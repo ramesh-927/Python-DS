@@ -15,13 +15,11 @@ Constraints:
 1 <= arr.length <= 1000
 -1000 <= arr[i] <= 1000
 """
+from collections import Counter
 class Solution:
     def uniqueOccurrences(self, arr):
-
-        count = {}
-        for num in arr:
-            count[num] = count.get(num, 0) + 1
-        return len(count) == len(set(count.values()))
+        count = Counter(arr)
+        return len(count.values()) == len(set(count.values()))
 
 if __name__ == "__main__":
     sol = Solution()
