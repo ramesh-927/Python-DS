@@ -1,4 +1,5 @@
 """
+Docstring for LeetCode-Top75-Solutions.ArrayAndStrings.01-1768.MergeStringsAlternately
 You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, 
 starting with word1. If a string is longer than the other, append the additional letters onto the end 
 of the merged string.
@@ -29,28 +30,27 @@ Constraints:
 word1 and word2 consist of lowercase English letters.
 """
 class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        i = j = 0
-        result = []  # MUST be a list
-        
-        while i < len(word1) and j < len(word2):
-            result.append(word1[i])
-            result.append(word2[j])
-            i += 1
-            j += 1
-        
-        result.append(word1[i:])
-        result.append(word2[j:])
-        
-        return "".join(result)
+    def mergeAlternatively(self, word1, word2):
 
+        result = []
 
-# Example usage:
+        for a, b in zip(word1, word2):
+            result.append(a)
+            result.append(b)
+
+        result.extend(word1[len(word2):])
+        result.extend(word2[len(word1):])
+
+        return ".".join(result)
+    
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.mergeAlternately("abc", "pqr"))   # apbqcr
-    print(sol.mergeAlternately("ab", "pqrs"))   # apbqrs
+    print(sol.mergeAlternatively("abc", "pqr"))    #.  a.p.b.q.c.r
+    print(sol.mergeAlternatively("ab", "pqrs"))    #   a.p.b.q.r.s
 
+# I used a list to build the result by looping through both strings in parallel using zip to add 
+# characters alternately. Then I appended any remaining characters from the longer string using 
+# slicing — this runs in linear time and is very easy to follow.
 
-# Time Complexity:	O(n + m)
-# Space Complexity:	O(n + m)
+# best time complexity: O(n + m)
+
