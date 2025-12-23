@@ -46,7 +46,7 @@ if __name__== "__main__":
 # one zero, expanding the right pointer and shrinking from the left when needed. This achieves O(n) 
 # time complexity and O(1) space, efficiently finding the maximum length after at most one flip.
 
-#Why this is the best algorithm for this kind of problem: Problems like finding the longest subarray 
+# Why this is the best algorithm for this kind of problem: Problems like finding the longest subarray 
 # with at most K constraints (here, K=1 for zeros) are perfect for sliding window with two pointers.
 # It avoids rechecking parts of the array, making it optimal for interviews where time efficiency 
 # matters.
