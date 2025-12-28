@@ -49,5 +49,12 @@ if __name__ == "__main__":
 #  Time Complexity :    **O(n)**   
 #  Space  Complexity :  **O(n)**   
 
-
+# Step By Step Explantion: Think like adding numbers by hand from right to left:
+# Start from the last digit of both strings
+# Add:  digit from a   &  digit from b
+# previous carry
+# Write the remainder (sum % 2)
+# Carry forward (sum // 2)
+# Continue until all digits and carry are used
+# Just like school math — but in binary
 
