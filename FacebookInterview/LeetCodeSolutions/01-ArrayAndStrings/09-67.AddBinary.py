@@ -40,6 +40,8 @@ if __name__ == "__main__":
     print(sol.addBinary("11", "1"))            # 100
     print(sol.addBinary("1010", "1011"))       # 10101
 
+# Two Pointer + Carry (Binary Addition)
+
 # I used a two-pointer approach starting from the end of both binary strings while maintaining a carry. 
 # This simulates manual binary addition and runs in linear time with optimal space usage.
 
