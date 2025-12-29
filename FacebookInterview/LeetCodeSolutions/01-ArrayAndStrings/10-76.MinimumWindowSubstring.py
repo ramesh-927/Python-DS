@@ -57,6 +57,7 @@ if __name__ =="__main__":
     print(sol.minwindow("a", "a"))                      # a
     print(sol.minwindow("a", "aa"))                      # ""
 
+# Sliding Window with Frequency Counting .This is the standard and expected solution in interviews.
 # I used a sliding window with a single frequency map that allows negative counts for extras. I track the 
 # remaining characters needed with a 'missing' counter, expand the right pointer to satisfy requirements, 
 # and shrink from the left when valid to minimize the window — achieving O(n) time with very minimal code
