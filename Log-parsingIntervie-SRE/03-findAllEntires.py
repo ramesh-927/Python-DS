@@ -1,9 +1,11 @@
 """
-Q1:  How would you count the number of ERROR vs WARNING entries
+Q1: 
+How you would count ERROR vs WARNING entries in a large production log file. Please explain your 
+approach and show how you would implement it.
 Answer: Optimal Answer:
 To avoid loading the whole file into memory, I would use a generator and process line by line.
-✅ Efficient: Doesnot load entire file
-✅ Scalable: Works for GB-sized logs
+Efficient: Doesnot load entire file
+Scalable: Works for GB-sized logs
 
 """
 from collections import Counter
