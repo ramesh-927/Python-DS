@@ -23,25 +23,29 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 """
 class Solution:
     def twoSum(self, nums, target):
+
         seen = {}
+        for i, num in enumerate(nums):
+            complment = target - num
+            if complment in seen:
+                return [seen[complment], i]
+            seen[num] = i
+        return ValueError(" NO Index Found!")
 
-        for idx, val in enumerate(nums):
-            complement = target - val
-
-            if complement in seen:
-                return [seen[complement], idx]
-            seen[val] = idx
-        raise ValueError("No solution")
-    
 if __name__ == "__main__":
     sol = Solution()
     print(sol.twoSum([2,7,11,15], 9))      # prints : [0, 1]
     print(sol.twoSum([3,2,4], 6))          # prints : [1, 2]
     print(sol.twoSum([3,3], 6))            # prints : [0, 1]
 
-
 # Time complexity  :        O(n) — single pass through the array 
 # Space complexity :     O(n) — extra dictionary storing seen values 
+
+# The smarter way is like keeping a quick-reference notebook as you go through the list. You use a 
+# "dictionary" (a simple lookup table in Python) to remember each number you've seen and where it was. 
+# For each new number, you first check if the "missing piece" (target minus this number) is already in 
+# your notebook. If yes, you've found the pair—return their positions. If not, add the current number 
+# and its position to the notebook.
 
 # I used a one-pass hash map: store seen values → indices and for each element check if the complement 
 # target - num exists. This gives O(n) time and O(n) space with a single traversal.
