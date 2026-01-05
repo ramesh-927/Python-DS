@@ -1,3 +1,38 @@
+
+"""
+Log-Parsing Interview Question – SRE 08: Rolling SLO (Multi-Service)
+
+Problem:
+You receive a continuous stream of request latency events.
+Each event contains:
+- service_id
+- timestamp
+- latency (ms)
+
+Requirements:
+1. Compute a rolling 95th percentile latency SLO for EACH service
+2. Use a sliding 1-hour time window
+3. Support hundreds or thousands of services
+4. Avoid recomputing percentiles from scratch for every request
+
+High-Level Approach:
+- Maintain a per-service sliding window using a deque
+- Evict requests older than 1 hour on ingestion
+- Compute percentile only from the active window
+- Use a dictionary to isolate state per service
+
+Scalability Notes (Interview Discussion):
+- Per-service isolation prevents cross-service contention
+- Deque enables O(1) insertions and evictions
+- In real production systems, percentiles would be computed using
+  histograms or streaming approximations (HDRHistogram / t-digest)
+  instead of raw arrays
+
+This solution demonstrates:
+- Sliding window computation
+- Per-service state management
+- Trade-offs between simplicity and production scalability
+"""
 from collections import deque
 from datetime import datetime, timedelta
 import numpy as np
@@ -59,3 +94,10 @@ if __name__ == "__main__":
 
     print("Service-A SLO:", multi_slo.calculate_slo("service-A"))
     print("Service-B SLO:", multi_slo.calculate_slo("service-B"))
+
+# | Component       | Complexity                     |
+# | --------------- | ------------------------------ |
+# | Add request     | O(1)                           |
+# | Evict old data  | O(1) amortized                 |
+# | Percentile calc | O(n) per service               |
+# | Memory          | O(active requests per service) |

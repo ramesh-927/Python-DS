@@ -1,3 +1,19 @@
+"""
+08- Log Security & Secret Detection at Scale
+
+You are building a log-processing system for a large-scale production environment where millions of log 
+lines are generated per minute across thousands of services.
+Some logs may accidentally leak sensitive credentials, such as:
+Cloud access keys (for example, AWS access keys)
+Application secret keys
+JWT authentication tokens
+
+Problem Statement
+Design and implement a function that scans a stream or batch of log lines and identifies lines that 
+contain potentially sensitive secrets.
+Secrets should be detected using pattern matching (for example, via regular expressions).
+The function should return only the flagged log lines that contain secrets.
+"""
 import re
 
 def scan_logs_for_secrets(logs):
@@ -47,3 +63,6 @@ print(scan_logs_for_secrets(logs))
 #   "WARN secret_key=abcd1234abcd1234",
 #   "INFO token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.abc.def"
 # ]
+
+# “I scan logs using pre-compiled regex patterns to efficiently detect leaked credentials, ensuring 
+# low latency, easy extensibility, and safe handling of sensitive data at scale.”
