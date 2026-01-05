@@ -6,12 +6,12 @@ named "web-server.log" and print the result, ensuring to handle any potential er
 Write a Python script to Count the occurances of the Error in log file
 """
 class Solution:
-    def count_keyword_in_log(self, log_file_path, keyword):
+    def count_keyword_in_log(self, log_file, keyword):
         """
         Counts how many lines in a log file contain the given keyword (case-insensitive).
     
         Args:
-            log_file_path (str): Path to the log file
+            log_file (str): Path to the log file
             keyword (str): Keyword to search for
     
         Returns:
@@ -19,14 +19,14 @@ class Solution:
         """
         count = 0
         try:
-            with open(log_file_path, 'r', encoding='utf-8') as file:
+            with open(log_file, 'r', encoding='utf-8') as file:
                 for line in file:
                     if keyword.lower() in line.lower():
                         count += 1
             return count
     
         except FileNotFoundError:
-            print(f"Error: File '{log_file_path}' does not exist!")
+            print(f"Error: File '{log_file}' does not exist!")
             return None
         except Exception as e:
             print(f"An unexpected error occurred: {e}")

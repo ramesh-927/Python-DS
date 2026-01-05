@@ -28,8 +28,9 @@ class Solution:
 
 
 if __name__ == "__main__":
+    sol = Solution()
     log_file = "web-server.log"
-    for ip, count in Solution().top_5_ips(log_file):
+    for ip, count in sol.top_5_ips(log_file):
         print(f"{ip} → {count} requests")
 
 # Regex explanation:
