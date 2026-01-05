@@ -1,0 +1,135 @@
+2025-08-01 08:15:23,123 INFO [main] Server startup initiated on 192.168.1.10:8080
+2025-08-01 08:15:24,456 DEBUG [main] Loading configuration from /etc/webserver/config.yaml
+2025-08-01 08:15:24,789 INFO [main] Configuration loaded successfully
+2025-08-01 08:15:25,012 WARNING [main] Deprecated SSL protocol detected: TLSv1.1
+2025-08-01 08:15:25,345 ERROR [main] ERR-1001: Failed to bind to 192.168.1.10:8080 - Address already in use
+2025-08-01 08:15:25,678 DEBUG [main] Retrying binding on 192.168.1.10:8081
+2025-08-01 08:15:26,901 INFO [main] Server started on 192.168.1.10:8081
+2025-08-01 08:15:27,234 DEBUG [main] Initializing session cache for 1000 users
+2025-08-01 08:15:27,567 WARNING [main] Cache size may be insufficient for expected load
+2025-08-01 08:15:28,890 INFO [http-1] Incoming request from 10.0.0.15:54321 - GET /api/login
+2025-08-01 09:00:01,123 INFO [http-1] Processing request from 172.16.0.22:12345 - POST /api/users
+2025-08-01 09:00:01,456 DEBUG [http-1] Payload size: 1.5KB
+2025-08-01 09:00:01,789 ERROR [http-1] ERR-2001: Failed request from 172.16.0.22:12345 - Invalid JSON format
+2025-08-01 09:00:02,012 INFO [http-1] Response sent to 172.16.0.22:12345 - 400 Bad Request
+2025-08-01 09:15:34,345 DEBUG [http-2] Incoming request from 192.168.1.50:45678 - GET /api/products
+2025-08-01 09:15:34,678 WARNING [http-2] High latency detected for 192.168.1.50:45678 - 250ms
+2025-08-01 09:15:35,901 INFO [http-2] Response sent to 192.168.1.50:45678 - 200 OK
+2025-08-01 10:00:12,234 ERROR [http-3] ERR-2002: Failed request from 10.0.0.100:33456 - Authentication failed for GET /api/admin
+2025-08-01 10:00:12,567 DEBUG [http-3] Invalid token received from 10.0.0.100:33456
+2025-08-01 10:00:12,890 INFO [http-3] Response sent to 10.0.0.100:33456 - 401 Unauthorized
+2025-08-01 12:30:45,123 INFO [main] Scheduled maintenance started on 192.168.1.10:8081
+2025-08-01 12:30:45,456 DEBUG [main] Clearing session cache
+2025-08-01 12:30:46,789 WARNING [main] Cache cleanup taking longer than expected
+2025-08-01 12:30:47,012 INFO [main] Maintenance completed
+2025-08-01 12:45:23,345 ERROR [http-4] ERR-2003: Failed request from 203.0.113.10:56789 - Resource not found: /api/v1/orders
+2025-08-01 12:45:23,678 DEBUG [http-4] Path /api/v1/orders does not exist for 203.0.113.10:56789
+2025-08-01 12:45:24,901 INFO [http-4] Response sent to 203.0.113.10:56789 - 404 Not Found
+2025-08-01 13:00:01,234 INFO [http-5] Incoming request from 192.168.1.25:43210 - PUT /api/users/123
+2025-08-01 13:00:01,567 DEBUG [http-5] Validating user data for 192.168.1.25:43210
+2025-08-01 13:00:01,890 WARNING [http-5] Missing required field: email for 192.168.1.25:43210
+2025-08-01 13:00:02,123 INFO [http-5] Response sent to 192.168.1.25:43210 - 400 Bad Request
+2025-08-02 00:15:34,456 ERROR [scheduler] ERR-4001: Cron job failed on 192.168.1.10:8081 - Database backup timeout
+2025-08-02 00:15:34,789 DEBUG [scheduler] Error: Connection to 192.168.1.20:3306 failed
+2025-08-02 00:15:35,012 INFO [scheduler] Notifying admin about backup failure
+2025-08-02 01:00:45,345 INFO [monitor] Health check on 192.168.1.10:8081 - CPU 80%, Memory 65%
+2025-08-02 01:00:45,678 DEBUG [monitor] Network latency to 10.0.0.1:53 - 30ms
+2025-08-02 01:00:46,901 WARNING [monitor] High CPU usage detected on 192.168.1.10:8081
+2025-08-02 02:30:12,234 INFO [http-6] Incoming request from 172.16.0.33:54321 - GET /api/orders
+2025-08-02 02:30:12,567 DEBUG [http-6] Cache hit for 172.16.0.33:54321
+2025-08-02 02:30:12,890 INFO [http-6] Response sent to 172.16.0.33:54321 - 200 OK
+2025-08-02 03:45:23,123 ERROR [http-7] ERR-2004: Failed request from 198.51.100.15:12345 - Timeout on GET /api/reports
+2025-08-02 03:45:23,456 DEBUG [http-7] Request from 198.51.100.15:12345 exceeded 5s timeout
+2025-08-02 03:45:23,789 INFO [http-7] Response sent to 198.51.100.15:12345 - 504 Gateway Timeout
+2025-08-02 04:00:01,012 INFO [http-8] Incoming request from 192.168.1.75:45678 - POST /api/transactions
+2025-08-02 04:00:01,345 DEBUG [http-8] Transaction amount: $750.00 from 192.168.1.75:45678
+2025-08-02 04:00:01,678 WARNING [http-8] High transaction amount detected from 192.168.1.75:45678
+2025-08-02 04:00:01,901 INFO [http-8] Response sent to 192.168.1.75:45678 - 201 Created
+2025-08-02 06:15:34,234 ERROR [main] ERR-5001: Unexpected shutdown on 192.168.1.10:8081
+2025-08-02 06:15:34,567 DEBUG [main] Last operation: Flush to 192.168.1.20:3306
+2025-08-02 06:15:34,890 INFO [main] Initiating recovery procedures
+2025-08-02 06:30:45,123 INFO [main] Recovery completed on 192.168.1.10:8081
+2025-08-02 07:00:12,456 DEBUG [monitor] Network latency to 8.8.8.8:53 - 45ms
+2025-08-02 07:00:12,789 WARNING [monitor] Network latency above threshold on 192.168.1.10:8081
+2025-08-02 08:15:23,012 INFO [http-9] Incoming request from 10.0.0.200:33456 - DELETE /api/orders/789
+2025-08-02 08:15:23,345 DEBUG [http-9] Checking order status for 10.0.0.200:33456
+2025-08-02 08:15:23,678 INFO [http-9] Response sent to 10.0.0.200:33456 - 204 No Content
+2025-08-03 00:00:01,901 ERROR [scheduler] ERR-4002: Cron job failed on 192.168.1.10:8081 - Cleanup temp files
+2025-08-03 00:00:02,234 DEBUG [scheduler] Error: Permission denied on /tmp/cache
+2025-08-03 00:00:02,567 INFO [scheduler] Escalating to admin
+2025-08-03 01:15:34,890 INFO [http-10] Incoming request from 172.16.0.44:54321 - GET /api/users/456
+2025-08-03 01:15:35,123 DEBUG [http-10] Querying database at 192.168.1.20:3306
+2025-08-03 01:15:35,456 WARNING [http-10] Slow database response from 192.168.1.20:3306
+2025-08-03 01:15:35,789 INFO [http-10] Response sent to 172.16.0.44:54321 - 200 OK
+2025-08-03 02:30:45,012 ERROR [http-11] ERR-2005: Failed request from 203.0.113.20:56789 - Invalid credentials for POST /api/auth
+2025-08-03 02:30:45,345 DEBUG [http-11] Invalid password from 203.0.113.20:56789
+2025-08-03 02:30:45,678 INFO [http-11] Response sent to 203.0.113.20:56789 - 401 Unauthorized
+2025-08-03 03:00:12,901 INFO [monitor] Health check on 192.168.1.10:8081 - CPU 60%, Memory 55%
+2025-08-03 03:00:13,234 DEBUG [monitor] Disk I/O to 192.168.1.30:2049 - 100MB/s
+2025-08-03 03:00:13,567 WARNING [monitor] Disk I/O approaching limit
+2025-08-03 04:15:23,890 INFO [http-12] Incoming request from 192.168.1.100:43210 - GET /api/reports
+2025-08-03 04:15:24,123 DEBUG [http-12] Generating report for 192.168.1.100:43210
+2025-08-03 04:15:24,456 INFO [http-12] Response sent to 192.168.1.100:43210 - 200 OK
+2025-08-03 06:00:01,789 ERROR [http-13] ERR-2006: Failed request from 10.0.0.50:12345 - Database timeout on GET /api/orders
+2025-08-03 06:00:02,012 DEBUG [http-13] Connection to 192.168.1.20:3306 failed for 10.0.0.50:12345
+2025-08-03 06:00:02,345 INFO [http-13] Response sent to 10.0.0.50:12345 - 503 Service Unavailable
+2025-08-03 07:15:34,678 INFO [main] Metrics snapshot created on 192.168.1.10:8081
+2025-08-03 07:15:34,901 DEBUG [main] Snapshot size: 800KB
+2025-08-03 07:15:35,234 WARNING [main] Snapshot compression ratio low
+2025-08-04 00:30:45,567 ERROR [scheduler] ERR-4003: Cron job failed on 192.168.1.10:8081 - Nightly sync
+2025-08-04 00:30:45,890 DEBUG [scheduler] Error: Connection refused to 192.168.1.40:5432
+2025-08-04 00:30:46,123 INFO [scheduler] Retrying in 10 minutes
+2025-08-04 01:00:12,456 INFO [http-14] Incoming request from 172.16.0.55:33456 - POST /api/transactions
+2025-08-04 01:00:12,789 DEBUG [http-14] Transaction amount: $1200.00 from 172.16.0.55:33456
+2025-08-04 01:00:13,012 WARNING [http-14] Suspicious transaction from 172.16.0.55:33456
+2025-08-04 01:00:13,345 INFO [http-14] Response sent to 172.16.0.55:33456 - 201 Created
+2025-08-04 02:15:23,678 ERROR [http-15] ERR-2007: Failed request from 198.51.100.25:54321 - Rate limit exceeded for GET /api/users
+2025-08-04 02:15:23,901 DEBUG [http-15] Requests from 198.51.100.25:54321 - 150 in 1 minute
+2025-08-04 02:15:24,234 INFO [http-15] Response sent to 198.51.100.25:54321 - 429 Too Many Requests
+2025-08-04 03:00:45,567 INFO [monitor] Health check on 192.168.1.10:8081 - CPU 75%, Memory 70%
+2025-08-04 03:00:45,890 DEBUG [monitor] Network throughput to 8.8.4.4:53 - 1.5Gbps
+2025-08-04 03:00:46,123 WARNING [monitor] Network congestion detected
+2025-08-04 04:15:12,456 INFO [http-16] Incoming request from 192.168.1.125:45678 - GET /api/inventory
+2025-08-04 04:15:12,789 DEBUG [http-16] Inventory query: category=books from 192.168.1.125:45678
+2025-08-04 04:15:13,012 INFO [http-16] Response sent to 192.168.1.125:45678 - 200 OK
+2025-08-04 05:00:23,345 ERROR [http-17] ERR-2008: Failed request from 10.0.0.75:12345 - Malformed query string in GET /api/search
+2025-08-04 05:00:23,678 DEBUG [http-17] Query string: ?q=invalid^format from 10.0.0.75:12345
+2025-08-04 05:00:23,901 INFO [http-17] Response sent to 10.0.0.75:12345 - 400 Bad Request
+2025-08-04 06:15:34,234 INFO [main] Server restart initiated on 192.168.1.10:8081
+2025-08-04 06:15:34,567 DEBUG [main] Stopping services on 192.168.1.10:8081
+2025-08-04 06:15:34,890 INFO [main] Services stopped successfully
+2025-08-04 06:15:35,123 ERROR [main] ERR-5002: Failed to restart service on 192.168.1.10:8081 - Port conflict
+2025-08-04 06:15:35,456 DEBUG [main] Port 8081 already in use
+2025-08-04 06:15:35,789 INFO [main] Retrying on 192.168.1.10:8082
+2025-08-04 07:00:12,012 INFO [http-18] Incoming request from 172.16.0.66:54321 - POST /api/auth/login
+2025-08-04 07:00:12,345 DEBUG [http-18] Validating credentials for 172.16.0.66:54321
+2025-08-04 07:00:12,678 INFO [http-18] Response sent to 172.16.0.66:54321 - 200 OK
+2025-08-04 08:15:23,901 ERROR [http-19] ERR-2009: Failed request from 203.0.113.30:33456 - Session expired for GET /api/profile
+2025-08-04 08:15:24,234 DEBUG [http-19] Session ID invalid for 203.0.113.30:33456
+2025-08-04 08:15:24,567 INFO [http-19] Response sent to 203.0.113.30:33456 - 401 Unauthorized
+2025-08-04 09:00:45,890 INFO [monitor] Health check on 192.168.1.10:8082 - CPU 50%, Memory 45%
+2025-08-04 09:00:46,123 DEBUG [monitor] Disk usage: 85%
+2025-08-04 09:00:46,456 WARNING [monitor] Disk usage approaching capacity
+2025-08-04 10:15:12,789 INFO [http-20] Incoming request from 192.168.1.150:45678 - GET /api/orders/123
+2025-08-04 10:15:13,012 DEBUG [http-20] Order status: pending for 192.168.1.150:45678
+2025-08-04 10:15:13,345 INFO [http-20] Response sent to 192.168.1.150:45678 - 200 OK
+2025-08-04 11:00:23,678 ERROR [http-21] ERR-2010: Failed request from 10.0.0.125:54321 - Database connection lost for POST /api/orders
+2025-08-04 11:00:23,901 DEBUG [http-21] Error connecting to 192.168.1.20:3306 from 10.0.0.125:54321
+2025-08-04 11:00:24,234 INFO [http-21] Response sent to 10.0.0.125:54321 - 503 Service Unavailable
+2025-08-04 12:15:34,567 INFO [http-22] Incoming request from 172.16.0.77:33456 - GET /api/users
+2025-08-04 12:15:34,890 DEBUG [http-22] Query parameters: limit=20, offset=0
+2025-08-04 12:15:35,123 WARNING [http-22] High request rate from 172.16.0.77:33456
+2025-08-04 12:15:35,456 INFO [http-22] Response sent to 172.16.0.77:33456 - 200 OK
+2025-08-04 13:00:12,789 ERROR [http-23] ERR-2011: Failed request from 198.51.100.35:12345 - Invalid content type for POST /api/files
+2025-08-04 13:00:13,012 DEBUG [http-23] Expected: application/json, Received: text/plain from 198.51.100.35:12345
+2025-08-04 13:00:13,345 INFO [http-23] Response sent to 198.51.100.35:12345 - 415 Unsupported Media Type
+2025-08-04 14:15:23,678 INFO [main] Metrics collection started on 192.168.1.10:8082
+2025-08-04 14:15:23,901 DEBUG [main] Collecting metrics from 6 services
+2025-08-04 14:15:24,234 WARNING [main] Metrics collection delayed by 500ms
+2025-08-04 15:00:34,567 ERROR [http-24] ERR-2012: Failed request from 192.168.1.175:54321 - Payload too large for POST /api/uploads
+2025-08-04 15:00:34,890 DEBUG [http-24] Payload size: 10MB, Limit: 5MB from 192.168.1.175:54321
+2025-08-04 15:00:35,123 INFO [http-24] Response sent to 192.168.1.175:54321 - 413 Payload Too Large
+2025-08-04 16:15:45,456 INFO [http-25] Incoming request from 10.0.0.150:45678 - GET /api/status
+2025-08-04 16:15:45,789 DEBUG [http-25] Checking server status for 10.0.0.150:45678
+2025-08-04 16:15:46,012 INFO [http-25] Response sent to 10.0.0.150:45678 - 200 OK
+2025-08-04 04:15:12,456 INFO [http-16] Incoming request from 192.168.1.125:45678 - GET /api/inventory
