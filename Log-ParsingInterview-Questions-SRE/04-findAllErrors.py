@@ -14,6 +14,7 @@ class Solution:
             for line in file:
                 if pattern.search(line):
                     yield line.strip()
+                
 if __name__== "__main__":
     sol = Solution()
     for log in sol.parse_log("error-code.log"):
