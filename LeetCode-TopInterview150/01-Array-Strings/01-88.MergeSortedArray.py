@@ -28,33 +28,30 @@ nums2.length == n
 -109 <= nums1[i], nums2[j] <= 109
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 """
-class Solutions(object):
+class Solution:
     def merge(self, nums1, m, nums2, n):
-
-        # Pointers for nums1, nums2, and the last index to fill
-        p1 = m - 1  # last valid element in nums1
-        p2 = n - 1   # last element in nums2
-        p =  n + m  - 1  # last index in nums1 (to fill)
-
-        while  p1 >= 0 and p2 >= 0:     # Merge from the back
-            if nums1[p1] > nums2[p2]:
-                nums1[p] = nums1[p1]
-                p1 -= 1
+        i = m - 1  # Pointer for nums1's elements
+        j = n - 1  # Pointer for nums2
+        k = m + n - 1  # Pointer for the end of nums1
+        
+        while i >= 0 and j >= 0:
+            if nums1[i] > nums2[j]:
+                nums1[k] = nums1[i]
+                i -= 1
             else:
-                nums1[p] = nums2[p2]
-                p2 -= 1
-            p -= 1
-
-        # If nums2 still has remaining elements, copy them
-        # (nums1 leftovers are already in place)
-        while p2 >= 0:
-            nums1[p] = nums2[p2]
-            p2 -= 1
-            p -= 1
+                nums1[k] = nums2[j]
+                j -= 1
+            k -= 1
+        
+        # Copy any remaining elements from nums2 (if nums1 is exhausted)
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
         return nums1
     
 if __name__ == "__main__":
-    sol = Solutions()
+    sol = Solution()
     nums1 = [1, 2, 3, 0, 0, 0]
     m = 3
     nums2 = [2, 5, 6]
