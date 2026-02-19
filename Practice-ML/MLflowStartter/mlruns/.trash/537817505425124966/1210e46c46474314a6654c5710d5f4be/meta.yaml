@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537817505425124966/1210e46c46474314a6654c5710d5f4be/artifacts
+deleted_time: 1770684655014
+end_time: 1770684616838
+entry_point_name: ''
+experiment_id: '537817505425124966'
+lifecycle_stage: deleted
+run_id: 1210e46c46474314a6654c5710d5f4be
+run_name: bemused-snipe-313
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770684616789
+status: 3
+tags: []
+user_id: rameshgolla

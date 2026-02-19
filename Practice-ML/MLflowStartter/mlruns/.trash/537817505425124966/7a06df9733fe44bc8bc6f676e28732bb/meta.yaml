@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537817505425124966/7a06df9733fe44bc8bc6f676e28732bb/artifacts
+deleted_time: 1770684655014
+end_time: 1770680470668
+entry_point_name: ''
+experiment_id: '537817505425124966'
+lifecycle_stage: deleted
+run_id: 7a06df9733fe44bc8bc6f676e28732bb
+run_name: invincible-croc-703
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770680470612
+status: 3
+tags: []
+user_id: rameshgolla
