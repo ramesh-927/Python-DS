@@ -6,40 +6,28 @@ Ansible is an open-source **IT automation tool** used for:
 * Infrastructure provisioning
 * Orchestration
 * Continuous delivery automation
-
 It is **agentless**, meaning you don’t need to install software on target machines. It uses **SSH (Linux)** or **WinRM (Windows)** to connect and execute tasks.
-
 ---
-
 ## What Problem Does Ansible Solve?
-
 ### The Problem (Before Ansible)
-
 In traditional environments:
-
 * Servers are configured manually
 * Each admin runs different commands
 * Environments become inconsistent
 * Deployments are error-prone
 * Scaling is difficult
 * Hard to maintain Dev/Test/Prod parity
-
 Example:
 You manually install:
-
 * Java
 * Nginx
 * Docker
 * Update config files
 * Start services
-
 Now imagine doing this on **100 servers**.
 It becomes slow, inconsistent, and risky.
-
 ---
-
 ### 🟢 The Solution (With Ansible)
-
 Ansible allows you to:
 
 ✔ Define infrastructure as code (YAML playbooks)
@@ -47,9 +35,7 @@ Ansible allows you to:
 ✔ Ensure idempotency (same result every time)
 ✔ Manage 10 or 10,000 servers the same way
 ✔ Maintain environment consistency
-
 Instead of logging into each server, you write:
-
 ```yaml
 - hosts: webservers
   tasks:
@@ -58,11 +44,8 @@ Instead of logging into each server, you write:
         name: nginx
         state: present
 ```
-
 Run once → applies everywhere.
-
 ## Why Companies Use Ansible
-
 * No agents to maintain
 * Easy YAML syntax
 * Fast learning curve
