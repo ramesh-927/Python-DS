@@ -1,0 +1,35 @@
+# azure-pipelines.yml - Interview Version
+trigger:
+  branches:
+    include: [main]
+
+variables:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildJob
+        pool: { vmImage: $(vmImage) }
+        steps:
+          - script: echo "Building project..." 
+            displayName: 'Build'
+
+  - stage: Test
+    dependsOn: Build
+    jobs:
+      - job: TestJob
+        pool: { vmImage: $(vmImage) }
+        steps:
+          - script: echo "Running tests..." 
+            displayName: 'Test'
+
+  - stage: Deploy
+    dependsOn: Test
+    condition: succeeded()
+    jobs:
+      - job: DeployJob
+        pool: { vmImage: $(vmImage) }
+        steps:
+          - script: echo "Deploying to Dev environment..." 
+            displayName: 'Deploy'
