@@ -1,8 +1,10 @@
 """
-Given an array of integers nums and an integer target, return indices of the two numbers 
-such that they add up to target.
-You may assume that each input would have exactly one solution, and you may not use the 
-same element twice.
+Docstring for LeetCode396questions-Apple.01-1.TwoSum
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that 
+they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element 
+twice.
 You can return the answer in any order.
 Example 1:
 Input: nums = [2,7,11,15], target = 9
@@ -23,20 +25,22 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 """
 class Solution:
     def twoSum(self, nums, target):
+        char_set = {}
 
-        seen = {}
         for i, num in enumerate(nums):
             complment = target - num
-            if complment in seen:
-                return [seen[complment], i]
-            seen[num] = i
-        return ValueError(" NO Index Found!")
 
-if __name__ == "__main__":
+            if complment in char_set:
+                return [char_set[complment], i]
+            char_set[num] = i
+        return ValueError("Indexes Num not Found!")
+
+if __name__== "__main__":
     sol = Solution()
-    print(sol.twoSum([2,7,11,15], 9))      # prints : [0, 1]
-    print(sol.twoSum([3,2,4], 6))          # prints : [1, 2]
-    print(sol.twoSum([3,3], 6))            # prints : [0, 1]
+    print(sol.twoSum([2,7,11,15], 9))        # [0, 1]
+    print(sol.twoSum([3,2,4], 6))            # [1, 2]
+    print(sol.twoSum([3,3], 6))              # [0, 1]
+
 
 # Time complexity  :        O(n) — single pass through the array 
 # Space complexity :     O(n) — extra dictionary storing seen values 

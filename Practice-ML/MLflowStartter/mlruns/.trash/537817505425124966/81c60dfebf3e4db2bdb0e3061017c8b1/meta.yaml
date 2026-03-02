@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/537817505425124966/81c60dfebf3e4db2bdb0e3061017c8b1/artifacts
+deleted_time: 1770684655014
+end_time: 1770680320327
+entry_point_name: ''
+experiment_id: '537817505425124966'
+lifecycle_stage: deleted
+run_id: 81c60dfebf3e4db2bdb0e3061017c8b1
+run_name: funny-hound-264
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770680320269
+status: 3
+tags: []
+user_id: rameshgolla
